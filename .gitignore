@@ -4,6 +4,15 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
 ### STS ###
 .apt_generated
 .classpath
@@ -12,6 +21,17 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+# Logs and databases #
+######################
+*.log
+
+# Maven #
+#########
+target
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+**/target/
 
 ### IntelliJ IDEA ###
 .idea
