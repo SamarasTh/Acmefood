@@ -14,7 +14,7 @@ spring:
             max-lifetime: 60000
             maximum-pool-size: 10
             minimum-idle: 1
-            pool-name: Acmefood`ConnectionPooling
+            pool-name: AcmefoodConnectionPooling
             transaction-isolation: TRANSACTION_READ_COMMITTED
             username: thanos
             password: pass1311
