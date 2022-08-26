@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 
-public abstract class Base {
+public abstract class BaseComponent {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
     @PostConstruct

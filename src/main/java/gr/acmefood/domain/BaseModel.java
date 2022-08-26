@@ -1,13 +1,23 @@
 package gr.acmefood.domain;
 
-import lombok.Data;
-import lombok.experimental.SuperBuilder;
+import lombok.*;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import java.io.Serial;
 import java.io.Serializable;
 
-@Data
-@SuperBuilder
-public class BaseModel implements Serializable {
+@Getter
+@ToString
+@MappedSuperclass
+public abstract class BaseModel implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
+    @Column(updatable = false)
     private Long id;
 }
