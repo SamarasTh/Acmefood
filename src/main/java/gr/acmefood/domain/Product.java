@@ -16,6 +16,9 @@ import java.math.BigDecimal;
 @SequenceGenerator(name = "productIdGenerator", sequenceName = "PRODUCTS_SEQ", initialValue = 1, allocationSize = 1)
 public class Product extends BaseModel{
 
+    @Column(length = 30, nullable = false, unique = true)
+    private String serial;
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Store store;
 
