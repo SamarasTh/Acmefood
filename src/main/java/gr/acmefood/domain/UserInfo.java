@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name= "USERSINFO")
-@SequenceGenerator(name = "userIdGenerator", sequenceName = "USERSINFO_SEQ", initialValue = 1, allocationSize = 1)
+@Table(name= "USERS_INFO")
+@SequenceGenerator(name = "userIdGenerator", sequenceName = "USERS_INFO_SEQ", initialValue = 1, allocationSize = 1)
 public class UserInfo extends BaseModel {
 
     @Column(length = 50, nullable = false)

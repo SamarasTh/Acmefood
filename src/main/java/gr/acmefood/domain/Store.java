@@ -17,7 +17,6 @@ import java.util.List;
 @SequenceGenerator(name = "storeIdGenerator", sequenceName = "STORES_SEQ", initialValue = 1, allocationSize = 1)
 public class Store extends BaseModel {
 
-
     @Enumerated(EnumType.STRING)
     @Column(length = 10, nullable = false)
     private StoreCategory storeCategory;

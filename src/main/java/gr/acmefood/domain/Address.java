@@ -29,7 +29,7 @@ public class Address extends BaseModel {
     private String streetName;
 
     @Column(length = 50, nullable = false)
-    private String StreetNumber;
+    private Integer StreetNumber;
 
     @Column(length = 50, nullable = false)
     private Integer postalCode;

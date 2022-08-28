@@ -18,8 +18,10 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
         return getRepository().save(entity);
     }
 
+
+    @SafeVarargs
     @Override
-    public List<T> createAll(final T... entities) {
+    public final List<T> createAll(final T... entities) {
         return createAll(Arrays.asList(entities));
     }
 
