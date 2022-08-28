@@ -5,7 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -29,7 +30,7 @@ public class Order extends BaseModel {
     private BigDecimal cost;
 
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY )
-    private Set<OrderItem> orderItems;
+    private List<OrderItem> orderItems;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 15, nullable = false)

@@ -19,9 +19,6 @@ public class Product extends BaseModel{
     @Column(length = 30, nullable = false, unique = true)
     private String serial;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Store store;
-
     @Column(length = 50, nullable = false)
     private String name;
 

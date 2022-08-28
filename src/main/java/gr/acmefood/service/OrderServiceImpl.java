@@ -25,7 +25,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
 
     @Override
     public Order startOrder(Account account) {
-        return Order.builder().account(account).orderItems(new HashSet<>()).build();
+        return Order.builder().account(account).orderItems(new ArrayList<>()).build();
     }
 
     @Override
