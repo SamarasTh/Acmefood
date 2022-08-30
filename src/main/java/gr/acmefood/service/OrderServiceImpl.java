@@ -85,10 +85,9 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
-    @Override
-    public Order checkout(Order order, PaymentMethod paymentMethod) {
+    public Order checkout(Order order, PaymentMethod paymentMethod, BigDecimal orderCost) {
         if (!validate(order)) {
-            logger.warn("Order should have Account, order items, and payment type defined before being able to " +
+            logger.warn("Order should have Account, order items, payment type and cost defined before being able to " +
                     "checkout the order.");
             return null;
         }
@@ -96,19 +95,11 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         // Set all order fields with proper values
         order.setPaymentMethod(paymentMethod);
         order.setSubmitDate(new Date());
+        order.setCost(orderCost);
         return create(order);
     }
     private boolean validate(Order order) {
         return order != null && !order.getOrderItems().isEmpty() && order.getAccount() != null;
-    }
-
-    @Override
-    public Order getLazy(Long id) {
-        Optional<Order> order = orderRepository.getLazy(id);
-        if (order.isPresent()) {
-            return order.get();
-        }
-        throw new NoSuchElementException(String.format("There was no order found matching id %d.", id));
     }
 
     @Override

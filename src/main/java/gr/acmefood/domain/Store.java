@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -28,11 +29,11 @@ public class Store extends BaseModel {
 
     @NotNull
     @Column(length = 50, nullable = false)
-    @OneToOne(fetch = FetchType.EAGER)
-    private Address address;
+//    @OneToOne(fetch = FetchType.EAGER)
+    private String address;
 
     @NotNull
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Set<@NotNull Product> products;
+    @OneToMany( fetch = FetchType.LAZY)
+    private List<@NotNull Product> products;
 
 }

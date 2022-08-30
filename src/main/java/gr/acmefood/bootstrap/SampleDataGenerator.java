@@ -2,6 +2,7 @@ package gr.acmefood.bootstrap;
 
 import gr.acmefood.base.BaseComponent;
 import gr.acmefood.domain.*;
+import gr.acmefood.service.AddressService;
 import gr.acmefood.service.ProductCategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -14,9 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SampleDataGenerator extends BaseComponent implements CommandLineRunner {
     private final ProductCategoryService productCategoryService;
+    private final AddressService addressService;
     @Override
     public void run(String... args) throws Exception {
 
+        //formatter:off
         ProductCategory productCategory1 = productCategoryService.create(ProductCategory.builder().name("Drink").build());
         logger.trace("Product Category {}, created",productCategory1);
         ProductCategory productCategory2 = productCategoryService.create(ProductCategory.builder().name("Food").build());
@@ -28,7 +31,27 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         ProductCategory productCategory5 = productCategoryService.create(ProductCategory.builder().name("Alcohol").build());
         logger.trace("Product Category {}, created",productCategory5);
 
-        //formatter:off
+//        Address address1 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Benizelou")
+//                        .StreetNumber(12).doorbellName("Papaxronis").floor(1).build());
+//        Address address2 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Papanastasiou")
+//                        .StreetNumber(12).doorbellName("Betzou").floor(1).build());
+//        Address address3 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Pireos")
+//                        .StreetNumber(12).doorbellName("Manolidou").floor(1).build());
+//        Address address4 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Kapsourou")
+//                        .StreetNumber(12).doorbellName("lakis").floor(1).build());
+//        Address address5 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Ignatiou")
+//                        .StreetNumber(12).doorbellName("takis").floor(1).build());
+//        Address address6 = addressService.create(
+//                Address.builder().state("Attica").city("Athens").postalCode(14343).streetName("Smyrnis")
+//                        .StreetNumber(12).doorbellName("Makis").floor(1).build());
+
+
+
         List<Product> souvlakiProducts = List.of(
                 Product.builder().serial("SN1111100011").name("Kalamaki X ")
                         .description("Pork  skewer").productCategory(productCategory2)

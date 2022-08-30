@@ -5,6 +5,7 @@ import gr.acmefood.domain.Order;
 import gr.acmefood.domain.PaymentMethod;
 import gr.acmefood.domain.Product;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -18,9 +19,7 @@ public interface OrderService extends BaseService<Order>{
 
     void removeItem(Order order, Product product);
 
-    Order checkout(Order order, PaymentMethod paymentMethod);
-
-    Order getLazy(Long id);
+    Order checkout(Order order, PaymentMethod paymentMethod, BigDecimal orderCost);
 
     List<Order> findBySubmitDate(Date submitDate);
 }
