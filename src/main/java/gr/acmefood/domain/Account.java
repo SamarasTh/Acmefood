@@ -17,30 +17,39 @@ import java.util.List;
 @Entity
 @Table(name = "ACCOUNTS")
 public class Account extends BaseModel {
+
     @NotNull
     @Column(length = 50, nullable = false)
     private String username;
+
     @NotNull
     @Column(length = 50, nullable = false)
     private String password;
+
     @Email
     @NotNull
     @Column(length = 50, nullable = false, unique = true)
     private String email;
+
     @NotNull
     @Column(length = 50, nullable = false, unique = true)
     private String phone;
+
+    @NotNull
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Address> addressList;
+    private List<@NotNull Address> addressList;
+
     @NotNull
     @Column(length = 50, nullable = false)
     private String fName;
+
     @NotNull
     @Column(length = 50, nullable = false)
     private String lName;
+
     @NotNull
     @Column(length = 50, nullable = false)
-    @Min(value= 12, message = "Too young for this app")
+    @Min(value = 12, message = "Too young for this app")
     private Integer age;
 
 }

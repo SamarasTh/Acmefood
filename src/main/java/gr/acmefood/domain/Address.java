@@ -5,8 +5,8 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -16,27 +16,32 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name = "ADDRESSES")
-@SequenceGenerator(name = "addressIdGenerator", sequenceName = "ADDRESSES_SEQ", initialValue = 1, allocationSize = 1)
 public class Address extends BaseModel {
-
+    @NotNull
     @Column(length = 50, nullable = false)
     private String state;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private String city;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private String streetName;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private Integer StreetNumber;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private Integer postalCode;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private Integer floor;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private String doorbellName;
 

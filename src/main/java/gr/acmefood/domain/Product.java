@@ -3,6 +3,7 @@ package gr.acmefood.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Getter
@@ -13,26 +14,26 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "PRODUCTS")
-@SequenceGenerator(name = "productIdGenerator", sequenceName = "PRODUCTS_SEQ", initialValue = 1, allocationSize = 1)
-public class Product extends BaseModel{
-
+public class Product extends BaseModel {
+    @NotNull
     @Column(length = 30, nullable = false, unique = true)
     private String serial;
 
+    @NotNull
     @Column(length = 50, nullable = false)
     private String name;
 
+    @NotNull
     @Column(length = 150, nullable = false)
     private String description;
 
+    @NotNull
     @OneToOne(fetch = FetchType.EAGER)
     private ProductCategory productCategory;
 
+    @NotNull
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
-
-
-
 
 
 }
