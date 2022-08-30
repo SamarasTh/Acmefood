@@ -4,7 +4,9 @@ package gr.acmefood.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -14,25 +16,24 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "STORES")
-@SequenceGenerator(name = "storeIdGenerator", sequenceName = "STORES_SEQ", initialValue = 1, allocationSize = 1)
 public class Store extends BaseModel {
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     @Column(length = 10, nullable = false)
     private StoreCategory storeCategory;
 
+    @NotNull
     @Column(length = 50, nullable = false)
-    private  String name;
+    private String name;
 
+    @NotNull
     @Column(length = 50, nullable = false)
+//    @OneToOne(fetch = FetchType.EAGER)
     private String address;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Product> products;
-
-
-
-
-
+    @NotNull
+    @OneToMany( fetch = FetchType.LAZY)
+    private List<@NotNull Product> products;
 
 }

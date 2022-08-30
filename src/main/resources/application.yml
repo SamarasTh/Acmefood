@@ -23,35 +23,36 @@ spring:
                 prepStmtCacheSize: 250
                 prepStmtCacheSqlLimit: 2048
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+        url: jdbc:oracle:thin:@//localhost:1521/XE
     jpa:
+        database: ORACLE
         generate-ddl: true
         hibernate:
             ddl-auto: update
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
             use-new-id-generator-mappings: true
-        open-in-view: false
-        properties:
-            hibernate:
-                batch_versioned_data: true
-                dialect: org.hibernate.dialect.Oracle12cDialect
-                jdbc:
-                    batch_size: 100
-                format_sql: true
-                order_inserts: true
-                order_updates: true
-                query:
-                    in_clause_parameter_padding: true
-                generate_statistics: true # NOT a production setting
-                session:
-                    events:
-                        log:
-                            LOG_QUERIES_SLOWER_THAN_MS: 10 # NOT a production setting
-        show-sql: false
-    sql:
-        init:
-            # Mode to apply when determining if DataSource initialization should be performed using the available DDL (schema
-            # .sql) and DML (data.sql) scripts.
-            mode: never
-            platform: oracle
+#       open-in-view: false
+#        properties:
+#            hibernate:
+#                batch_versioned_data: true
+#                dialect: org.hibernate.dialect.Oracle12cDialect
+#                jdbc:
+#                    batch_size: 100
+#                format_sql: true
+#                order_inserts: true
+#                order_updates: true
+#                query:
+#                    in_clause_parameter_padding: true
+#                generate_statistics: true # NOT a production setting
+#                session:
+#                    events:
+#                        log:
+#                            LOG_QUERIES_SLOWER_THAN_MS: 10 # NOT a production setting
+#        show-sql: false
+#    sql:
+#        init:
+#            # Mode to apply when determining if DataSource initialization should be performed using the available DDL (schema
+#            # .sql) and DML (data.sql) scripts.
+#            mode: never
+#            platform: oracle
