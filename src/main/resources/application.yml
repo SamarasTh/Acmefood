@@ -8,7 +8,7 @@ spring:
         driver-class-name: oracle.jdbc.OracleDriver
         hikari:
             auto-commit: false
-            connection-test-query: select 1 from dual
+#            connection-test-query: select 1 from dual
             connection-timeout: 10000
             idle-timeout: 30000
             max-lifetime: 60000
@@ -23,8 +23,9 @@ spring:
                 prepStmtCacheSize: 250
                 prepStmtCacheSqlLimit: 2048
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+        url: jdbc:oracle:thin:@//localhost:1521/XE
     jpa:
+        database: ORACLE
         generate-ddl: true
         hibernate:
             ddl-auto: update
