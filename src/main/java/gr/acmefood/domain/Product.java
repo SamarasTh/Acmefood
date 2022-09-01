@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "PRODUCTS")
 public class Product extends BaseModel {
     @NotNull
-    @Column(length = 30, nullable = false, unique = true)
+    @Column(length = 30, nullable = false)
     private String serial;
 
     @NotNull
