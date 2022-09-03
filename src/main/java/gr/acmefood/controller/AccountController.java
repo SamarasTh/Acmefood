@@ -14,6 +14,7 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("accounts")
+@CrossOrigin(origins = "*")
 public class AccountController extends AbstractController<Account> {
 
     private final AccountService accountService;

@@ -14,7 +14,7 @@ import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderService{
+public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderService {
 
     private final OrderRepository orderRepository;
 
@@ -29,10 +29,8 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public void addItem(Order order, Product product, int quantity)
-    {
-        if (checkNullability(order, product))
-        {
+    public void addItem(Order order, Product product, int quantity) {
+        if (checkNullability(order, product)) {
             return;
 
         }
@@ -60,10 +58,8 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public void updateItem(Order order, Product product, int quantity)
-    {
-        if (checkNullability(order, product))
-        {
+    public void updateItem(Order order, Product product, int quantity) {
+        if (checkNullability(order, product)) {
             return;
         }
         order.getOrderItems().removeIf(oi -> oi.getProduct().getSerial().equals(product.getSerial()));
@@ -73,10 +69,8 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public void removeItem(Order order, Product product)
-    {
-        if (checkNullability(order, product))
-        {
+    public void removeItem(Order order, Product product) {
+        if (checkNullability(order, product)) {
             return;
         }
 
@@ -85,7 +79,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
-    public Order checkout(Order order, PaymentMethod paymentMethod, BigDecimal orderCost) {
+    public Order checkout(Order order, PaymentMethod paymentMethod) {
         if (!validate(order)) {
             logger.warn("Order should have Account, order items, payment type and cost defined before being able to " +
                     "checkout the order.");
@@ -94,10 +88,12 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
 
         // Set all order fields with proper values
         order.setPaymentMethod(paymentMethod);
+        order.setCost(calculateTotalCost(order));
         order.setSubmitDate(new Date());
-        order.setCost(orderCost);
+        logger.info("Total Order cost is : {} € ", order.getCost());
         return create(order);
     }
+
     private boolean validate(Order order) {
         return order != null && !order.getOrderItems().isEmpty() && order.getAccount() != null;
     }
@@ -105,6 +101,17 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     @Override
     public List<Order> findBySubmitDate(final Date submitDate) {
         return null;
+    }
+
+    @Override
+    public BigDecimal calculateTotalCost(Order order) {
+        // Calculate total order cost based on orderItem price
+        //@formatter:off
+        BigDecimal finalCost = order.getOrderItems().stream()
+                .map(oi -> oi.getCost().multiply(BigDecimal.valueOf(oi.getQuantity())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        return finalCost;
     }
 
     private boolean checkNullability(Order order, Product product) {
@@ -118,6 +125,8 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         }
         return false;
     }
+
+
 }
 
 

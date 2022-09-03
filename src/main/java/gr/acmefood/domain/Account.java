@@ -35,8 +35,8 @@ public class Account extends BaseModel {
     @Column(length = 50, nullable = false, unique = true)
     private String phone;
 
-    @NotNull
-    @OneToMany(fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<@NotNull Address> addressList;
 
     @NotNull

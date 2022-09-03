@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-public interface OrderService extends BaseService<Order>{
+public interface OrderService extends BaseService<Order> {
 
     Order startOrder(Account account);
 
@@ -19,7 +19,9 @@ public interface OrderService extends BaseService<Order>{
 
     void removeItem(Order order, Product product);
 
-    Order checkout(Order order, PaymentMethod paymentMethod, BigDecimal orderCost);
+    Order checkout(Order order, PaymentMethod paymentMethod);
 
     List<Order> findBySubmitDate(Date submitDate);
+
+    BigDecimal calculateTotalCost(Order order);
 }
