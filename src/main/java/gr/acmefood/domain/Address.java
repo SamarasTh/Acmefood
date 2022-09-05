@@ -1,11 +1,10 @@
 package gr.acmefood.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
@@ -17,6 +16,12 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "ADDRESSES")
 public class Address extends BaseModel {
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @NotNull
+    @JsonIgnore
+    private Account account;
+
     @NotNull
     @Column(length = 50, nullable = false)
     private String state;
