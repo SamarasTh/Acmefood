@@ -29,6 +29,12 @@ public class OrderController extends AbstractController<Order>{
         return ResponseEntity.ok(ApiResponse.<Order>builder().data(startingOrder).build());
     }
 
+    @DeleteMapping(params = "deleteItem")
+    public ResponseEntity<ApiResponse<Order>>removeItem(@RequestParam Order order, @RequestParam Product product) {
+        final Order removingItem = orderService.removeItem(order, product);
+        return ResponseEntity.ok(ApiResponse.<Order>builder().data(removingItem).build());
+    }
+
     @GetMapping(params = "submitDate")
     public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@RequestParam Date submitDate) {
         final List<Order> bySubmitDate = orderService.findBySubmitDate(submitDate);
@@ -37,4 +43,6 @@ public class OrderController extends AbstractController<Order>{
         }
         return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(bySubmitDate).build());
     }
+
+
 }

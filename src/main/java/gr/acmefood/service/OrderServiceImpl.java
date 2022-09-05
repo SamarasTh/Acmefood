@@ -73,15 +73,16 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public void removeItem(Order order, Product product)
+    public Order removeItem(Order order, Product product)
     {
         if (checkNullability(order, product))
         {
-            return;
+            return order;
         }
 
         order.getOrderItems().removeIf(oi -> oi.getProduct().getSerial().equals(product.getSerial()));
         logger.debug("Product[{}] removed from Order[{}]", product, order);
+        return order;
     }
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
