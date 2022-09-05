@@ -28,10 +28,11 @@ spring:
         database: ORACLE
         generate-ddl: true
         hibernate:
-            ddl-auto: update
+            ddl-auto: create-drop
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
             use-new-id-generator-mappings: true
+        show-sql: true
 #       open-in-view: false
 #        properties:
 #            hibernate:

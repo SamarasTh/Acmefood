@@ -1,5 +1,6 @@
 package gr.acmefood.service;
 
+import gr.acmefood.domain.Product;
 import gr.acmefood.domain.Store;
 import gr.acmefood.domain.StoreCategory;
 import gr.acmefood.repository.StoreRepository;
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -16,16 +18,17 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
 
     @Override
     public JpaRepository<Store, Long> getRepository() {
-        return null;
+        return storeRepository;
+    }
+
+
+    @Override
+    public Store findStoreByStoreCategory(final StoreCategory storeCategory) {
+        return storeRepository.findByStoreCategory(storeCategory);
     }
 
     @Override
-    public Store findByStoreCategory(StoreCategory storeCategory) {
-        return null;
-    }
-
-    @Override
-    public Store findStoreByName(String name) {
-        return null;
+    public Store findStoreByName(final String name) {
+        return storeRepository.findByName(name);
     }
 }
