@@ -17,7 +17,7 @@ public interface OrderService extends BaseService<Order> {
 
     void updateItem(Order order, Product product, int quantity);
 
-    Order removeItem(Order order, Product product);
+    void removeItem(Order order, Product product);
 
     Order checkout(Order order, PaymentMethod paymentMethod);
 
