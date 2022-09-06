@@ -392,6 +392,8 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         List<Store> persistedCoffeeStores = storeService.createAll(coffeeStores);
 
 
+        //var x = storeService.findByStoreCategory(StoreCategory.SOUVLAKI);
+        //x.forEach(i -> logger.info("{}", i.getName()));
 
 
     }

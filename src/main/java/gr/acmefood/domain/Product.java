@@ -15,6 +15,8 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "PRODUCTS")
 public class Product extends BaseModel {
+
+
     @NotNull
     @Column(length = 30, nullable = false)
     private String serial;
