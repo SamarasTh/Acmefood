@@ -10,16 +10,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
+
 @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
 public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent implements BaseService<T> {
 
     public abstract JpaRepository<T, Long> getRepository();
+
     @Override
     public T create(final T entity) {
         logger.trace("Creating {}.", entity);
         return getRepository().save(entity);
     }
-
 
 
     @Override
@@ -48,7 +49,10 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
     public T get(final Long id) {
         logger.trace("Retrieving item with id {}.", id);
         return getRepository().findById(id).orElseThrow(() -> new NoSuchElementException("Element not found"));
+
+
     }
+
     @Transactional(readOnly = true)
     @Override
     public List<T> findAll() {
