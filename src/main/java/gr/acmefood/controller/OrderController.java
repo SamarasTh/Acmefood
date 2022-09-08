@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,21 +18,18 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 @RequestMapping("orders")
 
-public class OrderController extends AbstractController<Order> {
+public class OrderController extends AbstractController<Order>{
     private final OrderService orderService;
-
     @Override
-    public BaseService<Order> getBaseService() {
-        return orderService;
+    public BaseService<Order> getBaseService() {return orderService;}
+
+    @PostMapping
+    public ResponseEntity<ApiResponse<Order>>startOrder(@RequestParam Account account) {
+        final Order startingOrder = orderService.startOrder(account);
+        return ResponseEntity.ok(ApiResponse.<Order>builder().data(startingOrder).build());
     }
 
-//    @PostMapping("start")
-//    public ResponseEntity<ApiResponse<Order>> startOrder(@Valid @RequestBody Account account) {
-//        final Order startingOrder = orderService.startOrder(account);
-//        return ResponseEntity.ok(ApiResponse.<Order>builder().data(startingOrder).build());
-//    }
-
-    @GetMapping("findByDate")
+    @GetMapping(params = "submitDate")
     public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@RequestParam Date submitDate) {
         final List<Order> bySubmitDate = orderService.findBySubmitDate(submitDate);
         if (bySubmitDate == null) {
