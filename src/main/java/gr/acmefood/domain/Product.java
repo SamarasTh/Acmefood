@@ -37,5 +37,7 @@ public class Product extends BaseModel {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ref_store")
+    private Store store;
 }
