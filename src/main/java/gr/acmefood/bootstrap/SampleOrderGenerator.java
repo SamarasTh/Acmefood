@@ -51,5 +51,4 @@ public class SampleOrderGenerator extends BaseComponent implements CommandLineRu
         // Checkout order
         orderService.checkout(firstOrder, PaymentMethod.CARD);
     }
-             
 }

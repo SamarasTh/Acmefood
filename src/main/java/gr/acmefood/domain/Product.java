@@ -26,7 +26,7 @@ public class Product extends BaseModel {
     private String name;
 
     @NotNull
-    @Column(length = 150, nullable = false)
+    @Column(length = 1150, nullable = false)
     private String description;
 
     @NotNull
