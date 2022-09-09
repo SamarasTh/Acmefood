@@ -104,10 +104,6 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public List<Order> retrieveAllPlacedOrders(String email) {return orderRepository.retrieveAllPlacedOrders(email);
-    }
-
-    @Override
     public BigDecimal calculateTotalCost(Order order) {
         // Calculate total order cost based on orderItem price
         //@formatter:off
