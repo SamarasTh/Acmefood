@@ -18,7 +18,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
     private final ProductService productService;
     private final AddressService addressService;
 
-    private final OrderService orderService;
+    private final StoreCategoryService storeCategoryService;
 
     private final AccountService accountService;
     private final StoreService storeService;
@@ -82,22 +82,22 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 
 
         List<Product> souvlakiProducts1 = List.of(
-                Product.builder().serial("SN11111100013121").name("Kalamaki X ")
+                Product.builder().serial("SN11111100013121").name("Καλαμάκι Χοιρινό")
                         .description("Pork  skewer").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN11114100012").name("Kalamaki K")
+                Product.builder().serial("SN11114100012").name("Kαλαμάκι Κοτόπουλο")
                         .description("Chicken skewer ").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(2.20)).build(),
-                Product.builder().serial("SN1111100013").name("Souvlaki X wrap")
+                Product.builder().serial("SN1111100013").name("Τυλιχτό Γύρο Χοιρινό")
                         .description("Pork meat wrapped with ingredients of your choice").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100014").name("Souvlaki K wrap")
-                        .description("Chicken meat wrapped with ingredients of your choice").productCategory(productCategory2)
+                Product.builder().serial("SN1111100014").name("Τυλιχτό Γύρο Κοτόπουλο")
+                        .description("Τυλιχτό Γύρο Κοτόπουλο με υλικά της επιλογής σας").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(3.20)).build(),
                 Product.builder().serial("SN1111100015").name("Kebab")
-                        .description("Lamb Kebab skewer").productCategory(productCategory2)
+                        .description("Αρνήσιο Κεμπάμπ σε καλαμάκι").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100016").name("Kebab")
+                Product.builder().serial("SN1111100016").name("Kebab Τυλιχτό")
                         .description("Lamb Kebab wrapped with ingredients of your choice").productCategory(productCategory2)
                         .price(BigDecimal.valueOf(3.10)).build(),
                 Product.builder().serial("SN1111100017").name("Bifteki Mosxarisio")
@@ -350,39 +350,100 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         List<Product> coffees4 = productService.createAll(coffeeProducts4);
         List<Product> coffees5 = productService.createAll(coffeeProducts5);
 
+        List<StoreCategory> storeCategories = List.of(
+                StoreCategory.builder().name("Pizza")
+                        .imgUrl("assets/img/service/1.png").build(),
+                StoreCategory.builder().name("Κινέζικο")
+                        .imgUrl("assets/img/service/2.png").build(),
+                StoreCategory.builder().name("Burger")
+                        .imgUrl("assets/img/service/3.png").build(),
+                StoreCategory.builder().name("Ζυμαρικά")
+                        .imgUrl("assets/img/service/4.png").build(),
+                StoreCategory.builder().name("Vegetarian")
+                        .imgUrl("assets/img/service/5.png").build(),
+                StoreCategory.builder().name("Μεξικάνικο")
+                        .imgUrl("assets/img/service/6.png").build(),
+                StoreCategory.builder().name("Mαγειρευτά")
+                        .imgUrl("assets/img/service/7.png").build(),
+                StoreCategory.builder().name("Σουβλάκια")
+                        .imgUrl("assets/img/service/8.png").build(),
+                StoreCategory.builder().name("Καφές")
+                        .imgUrl("assets/img/service/9.png").build(),
+                StoreCategory.builder().name("Γλυκά")
+                        .imgUrl("assets/img/service/10.png").build(),
+                StoreCategory.builder().name("Super Market")
+                        .imgUrl("assets/img/service/11.png").build(),
+                StoreCategory.builder().name("Sushi")
+                        .imgUrl("assets/img/service/12.png").build()
+        );
+
+        storeCategoryService.createAll(storeCategories);
+
 
         List<Store> souvlakiStores = List.of(
-                Store.builder().name("Soublakes").storeCategory(StoreCategory.SOUVLAKI)
-                        .address("Antypa 10").products(souvlakiProducts1).build(),
-                Store.builder().name("BarbaLias").storeCategory(StoreCategory.SOUVLAKI)
-                        .address("Dekeleias 123").products(souvlakiProducts2).build(),
-                Store.builder().name("Souvlakoupoli").storeCategory(StoreCategory.SOUVLAKI)
-                        .address("Smyrnis 31").products(souvlakiProducts3).build(),
-                Store.builder().name("Poli").storeCategory(StoreCategory.SOUVLAKI)
-                        .address("Labraki 23").products(souvlakiProducts4).build()
+                Store.builder().name("Οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Λεωφόρος Δεκελείας 57").products(souvlakia1)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x260257@3x.png").build(),
+                Store.builder().name("H Πόλη").storeCategory(storeCategories.get(7))
+                        .address("Λ. Δεκελείας 130").products(souvlakia2)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(7))
+                        .address("Λεωφόρος Δεκελείας 83").products(souvlakia3)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png").build(),
+                Store.builder().name("Μπάρμπα Αλέξης").storeCategory(storeCategories.get(7))
+                        .address("Σαλαμίνος 70").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x267109@3x.png").build(),
+                Store.builder().name("Άγραφα 1977").storeCategory(storeCategories.get(7))
+                        .address("Τσούντα 49,").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254143@3x.png").build(),
+                Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(7))
+                        .address("Λεωφόρος Ηρακλείου 252").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                        .address("Antypa 10").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build()
+
         );
 
         List<Store> burgerStores = List.of(
-                Store.builder().name("BBQ").storeCategory(StoreCategory.BURGER)
+                Store.builder().name("BBQ").storeCategory(storeCategories.get(2))
                         .address("Antypa 10").products(burgerProducts1).build(),
-                Store.builder().name("1933 Burgers").storeCategory(StoreCategory.BURGER)
+                Store.builder().name("1933 Burgers").storeCategory(storeCategories.get(2))
                         .address("Dekeleias 123").products(burgerProducts2).build(),
-                Store.builder().name("Goodys BurgerHouse").storeCategory(StoreCategory.BURGER)
+                Store.builder().name("Goodys BurgerHouse").storeCategory(storeCategories.get(2))
                         .address("Simple Burgers 31").products(burgerProducts3).build(),
-                Store.builder().name("Poli").storeCategory(StoreCategory.BURGER)
+                Store.builder().name("Poli").storeCategory(storeCategories.get(2))
                         .address("Labraki 23").products(burgerProducts4).build()
         );
 
         List<Store> coffeeStores = List.of(
-                Store.builder().name("Il Toto").storeCategory(StoreCategory.COFFEE)
+                Store.builder().name("Il Toto").storeCategory(storeCategories.get(8))
                         .address("Antypa 10").products(coffeeProducts1).build(),
-                Store.builder().name("Baratin").storeCategory(StoreCategory.COFFEE)
+                Store.builder().name("Baratin").storeCategory(storeCategories.get(8))
                         .address("Dekeleias 123").products(coffeeProducts2).build(),
-                Store.builder().name("Goodys BurgerHouse").storeCategory(StoreCategory.COFFEE)
+                Store.builder().name("Goodys BurgerHouse").storeCategory(storeCategories.get(8))
                         .address("Smyrnis 31").products(coffeeProducts3).build(),
-                Store.builder().name("Coffee Island").storeCategory(StoreCategory.COFFEE)
+                Store.builder().name("Coffee Island").storeCategory(storeCategories.get(8))
                         .address("Labraki 23").products(coffeeProducts4).build(),
-                Store.builder().name("Coffee Beelding").storeCategory(StoreCategory.COFFEE)
+                Store.builder().name("Coffee Beelding").storeCategory(storeCategories.get(8))
                         .address("Ionias 23").products(coffeeProducts5).build()
         );
 
@@ -390,10 +451,6 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         List<Store> persistedSouvlakiStores = storeService.createAll(souvlakiStores);
         List<Store> persistedBurgerStores = storeService.createAll(burgerStores);
         List<Store> persistedCoffeeStores = storeService.createAll(coffeeStores);
-
-
-        //var x = storeService.findByStoreCategory(StoreCategory.SOUVLAKI);
-        //x.forEach(i -> logger.info("{}", i.getName()));
 
 
     }
