@@ -1,8 +1,6 @@
 package gr.acmefood.controller;
 
-import gr.acmefood.domain.Account;
-import gr.acmefood.domain.Order;
-import gr.acmefood.domain.Product;
+import gr.acmefood.domain.*;
 import gr.acmefood.service.BaseService;
 import gr.acmefood.service.OrderService;
 import gr.acmefood.transfer.ApiResponse;
@@ -36,5 +34,15 @@ public class OrderController extends AbstractController<Order>{
             throw new NoSuchElementException("Order not found");
         }
         return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(bySubmitDate).build());
+    }
+
+    @GetMapping(params = "allPlacedOrders")
+    public ResponseEntity<ApiResponse<List<Order>>> retrieveAllPlacedOrders(@RequestParam String email) {
+        List<Order> retrievingAllPlacedOrders = orderService.retrieveAllPlacedOrders(email);
+        logger.info(String.valueOf(orderService));
+        if (retrievingAllPlacedOrders == null) {
+            throw new NoSuchElementException("Placed orders not found");
+        }
+        return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(retrievingAllPlacedOrders).build());
     }
 }

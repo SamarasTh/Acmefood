@@ -44,16 +44,4 @@ public class StoreController extends AbstractController<Store> {
         }
         return ResponseEntity.ok(ApiResponse.<Store>builder().data(byStoreName).build());
     }
-
-//    @GetMapping("/getByStatus")
-//    public ResponseEntity<ApiResponse<List<Parent>>> findByMaritalStatus(@RequestParam("status") MaritalStatus maritalStatus) {
-//        logger.info(String.valueOf(maritalStatus));
-//        //MaritalStatus maritalStatus
-//        final List<Parent> byMaritalStatus = parentService.findByMaritalStatus(maritalStatus);
-//        if (byMaritalStatus == null) {
-//            throw new NoSuchElementException("Element not found");
-//        }
-//        return ResponseEntity.ok(ApiResponse.<List<Parent>>builder().data(byMaritalStatus).build());
-//    }
-
 }

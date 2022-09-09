@@ -23,5 +23,7 @@ public interface OrderService extends BaseService<Order> {
 
     List<Order> findBySubmitDate(Date submitDate);
 
+    List<Order> retrieveAllPlacedOrders(String email);
+
     BigDecimal calculateTotalCost(Order order);
 }
