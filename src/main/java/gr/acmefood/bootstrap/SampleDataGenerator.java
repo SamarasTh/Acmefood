@@ -399,12 +399,13 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                 Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(7))
                         .address("Λεωφόρος Ηρακλείου 252").products(souvlakia4)
                         .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png").build(),
-                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
+                Store.builder().name("Ο Δήμος").storeCategory(storeCategories.get(7))
+                        .address("Σαρδέων 4").products(souvlakia4)
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254990@3x.png").build(),
+
+                Store.builder().name("Σάββας κεμπάπ").storeCategory(storeCategories.get(7))
                         .address("Antypa 10").products(souvlakia4)
-                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
-                Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
-                        .address("Antypa 10").products(souvlakia4)
-                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),
+                        .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x253721@3x.png").build(),
                 Store.builder().name("οι Σουβλάκες").storeCategory(storeCategories.get(7))
                         .address("Antypa 10").products(souvlakia4)
                         .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png").build(),

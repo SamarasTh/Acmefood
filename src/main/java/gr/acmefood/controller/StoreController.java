@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -25,6 +26,7 @@ public class StoreController extends AbstractController<Store> {
     public BaseService<Store> getBaseService() {
         return storeService;
     }
+
 
     @GetMapping(params = "storeCategory")
     public ResponseEntity<ApiResponse<List<Store>>> findByStoreCategory(@RequestParam StoreCategory storeCategory) {
@@ -45,15 +47,5 @@ public class StoreController extends AbstractController<Store> {
         return ResponseEntity.ok(ApiResponse.<Store>builder().data(byStoreName).build());
     }
 
-//    @GetMapping("/getByStatus")
-//    public ResponseEntity<ApiResponse<List<Parent>>> findByMaritalStatus(@RequestParam("status") MaritalStatus maritalStatus) {
-//        logger.info(String.valueOf(maritalStatus));
-//        //MaritalStatus maritalStatus
-//        final List<Parent> byMaritalStatus = parentService.findByMaritalStatus(maritalStatus);
-//        if (byMaritalStatus == null) {
-//            throw new NoSuchElementException("Element not found");
-//        }
-//        return ResponseEntity.ok(ApiResponse.<List<Parent>>builder().data(byMaritalStatus).build());
-//    }
 
 }

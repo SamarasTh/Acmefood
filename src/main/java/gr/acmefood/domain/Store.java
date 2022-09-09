@@ -18,9 +18,9 @@ import java.util.Set;
 @Table(name = "STORES")
 public class Store extends BaseModel {
 
-    @Enumerated(EnumType.STRING)
+
     @NotNull
-    @Column(length = 10, nullable = false)
+    @OneToOne(fetch = FetchType.EAGER)
     private StoreCategory storeCategory;
 
     @NotNull
@@ -33,7 +33,11 @@ public class Store extends BaseModel {
     private String address;
 
     @NotNull
-    @OneToMany( fetch = FetchType.LAZY)
-    private List<@NotNull Product> products;
+    @OneToMany(mappedBy = "store", cascade = CascadeType.MERGE, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Product> products;
+
+    @NotNull
+    @Column(length = 1000)
+    private String imgUrl;
 
 }
