@@ -1,6 +1,5 @@
 package gr.acmefood.service;
 
-import gr.acmefood.domain.Store;
 import gr.acmefood.domain.StoreCategory;
 
 

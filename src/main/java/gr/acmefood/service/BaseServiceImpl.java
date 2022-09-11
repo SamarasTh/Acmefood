@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -32,7 +32,6 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
     public void update(final T entity) {
         logger.trace("Updating {}.", entity);
         getRepository().save(entity);
-
     }
 
 
@@ -41,7 +40,6 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
         final T entityFound = getRepository().getReferenceById(id);
         logger.trace("Deleting {}.", entityFound);
         getRepository().deleteById(id);
-
     }
 
     @Transactional(readOnly = true)
@@ -49,8 +47,13 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
     public T get(final Long id) {
         logger.trace("Retrieving item with id {}.", id);
         return getRepository().findById(id).orElseThrow(() -> new NoSuchElementException("Element not found"));
+    }
 
-
+    @Transactional(readOnly = true)
+    @Override
+    public List<T> findAllById(final Long id) {
+        logger.trace("Retrieving items with id {}.", id);
+        return getRepository().findAllById(Collections.singleton(id));
     }
 
     @Transactional(readOnly = true)

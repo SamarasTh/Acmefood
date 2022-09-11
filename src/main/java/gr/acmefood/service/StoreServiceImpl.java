@@ -1,12 +1,12 @@
 package gr.acmefood.service;
 
 import gr.acmefood.domain.Store;
-import gr.acmefood.domain.StoreCategory;
 import gr.acmefood.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,8 +22,10 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
 
 
     @Override
-    public List<Store> findByStoreCategory(final StoreCategory storeCategory) {
-        return storeRepository.findByStoreCategory(storeCategory);
+    public List<Store> findByStoreCategoryId(final Long storeCategoryId) {
+        List<Store> storesByStoreCategoryId = new ArrayList<>();
+        storesByStoreCategoryId = storeRepository.findByStoreCategory_Id(storeCategoryId);
+        return storesByStoreCategoryId;
     }
 
     @Override
