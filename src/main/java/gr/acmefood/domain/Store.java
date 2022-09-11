@@ -33,7 +33,8 @@ public class Store extends BaseModel {
     private String address;
 
     @NotNull
-    @OneToMany(mappedBy = "store", cascade = CascadeType.MERGE, orphanRemoval = true, fetch = FetchType.LAZY)
+//    mappedBy = "store",
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Product> products;
 
     @NotNull

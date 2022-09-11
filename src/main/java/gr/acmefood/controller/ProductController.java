@@ -1,6 +1,7 @@
 package gr.acmefood.controller;
 
 import gr.acmefood.domain.Product;
+import gr.acmefood.domain.Store;
 import gr.acmefood.service.BaseService;
 import gr.acmefood.service.ProductService;
 import gr.acmefood.transfer.ApiResponse;
@@ -39,5 +40,15 @@ public class ProductController extends AbstractController<Product> {
     public ResponseEntity<ApiResponse<List<Product>>> getAllProducts() {
         final List<Product> productList = productService.findAll();
         return ResponseEntity.ok(ApiResponse.<List<Product>>builder().data(productList).build());
+    }
+
+    @GetMapping(params = "storeId", value = "/products-by-store")
+    public ResponseEntity<ApiResponse<List<Product>>> getByStoreId(@RequestParam Long storeId) {
+        final List<Product> byStore = productService.findByStoreId(storeId);
+        logger.info(String.valueOf(storeId));
+        if (byStore == null || byStore.isEmpty()) {
+            throw new NoSuchElementException("Products for this Store not found");
+        }
+        return ResponseEntity.ok(ApiResponse.<List<Product>>builder().data(byStore).build());
     }
 }
