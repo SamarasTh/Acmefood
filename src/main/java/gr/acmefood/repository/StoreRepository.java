@@ -1,7 +1,6 @@
 package gr.acmefood.repository;
 
 import gr.acmefood.domain.Store;
-import gr.acmefood.domain.StoreCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +10,7 @@ import java.util.List;
 public interface StoreRepository extends JpaRepository<Store, Long> {
 
 
-    List<Store> findByStoreCategory(StoreCategory storeCategory);
+    List<Store> findByStoreCategory_Id(Long id);
 
     Store findByName(String name);
 

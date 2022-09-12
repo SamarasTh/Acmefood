@@ -1,5 +1,6 @@
 package gr.acmefood.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,7 +27,7 @@ public class Product extends BaseModel {
     private String name;
 
     @NotNull
-    @Column(length = 150, nullable = false)
+    @Column(length = 1150, nullable = false)
     private String description;
 
     @NotNull
@@ -37,7 +38,8 @@ public class Product extends BaseModel {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ref_store")
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @NotNull
+    @JsonIgnore
     private Store store;
 }

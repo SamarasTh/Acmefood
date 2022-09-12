@@ -52,5 +52,4 @@ public class SampleOrderGenerator extends BaseComponent implements CommandLineRu
         orderService.checkout(firstOrder, PaymentMethod.CARD);
         orderService.findAll().forEach(o -> logger.info("{}", o));
     }
-             
 }

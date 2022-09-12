@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -20,8 +21,11 @@ import java.util.NoSuchElementException;
 public class ProductController extends AbstractController<Product> {
 
     private final ProductService productService;
+
     @Override
-    public BaseService<Product> getBaseService() {return productService;}
+    public BaseService<Product> getBaseService() {
+        return productService;
+    }
 
     @GetMapping(params = "serial")
     public ResponseEntity<ApiResponse<Product>> findBySerial(@RequestParam String serial) {
@@ -30,5 +34,21 @@ public class ProductController extends AbstractController<Product> {
             throw new NoSuchElementException("Product not found");
         }
         return ResponseEntity.ok(ApiResponse.<Product>builder().data(bySerial).build());
+    }
+
+    @GetMapping("all")
+    public ResponseEntity<ApiResponse<List<Product>>> getAllProducts() {
+        final List<Product> productList = productService.findAll();
+        return ResponseEntity.ok(ApiResponse.<List<Product>>builder().data(productList).build());
+    }
+
+    @GetMapping(params = "storeId", value = "/products-by-store")
+    public ResponseEntity<ApiResponse<List<Product>>> getByStoreId(@RequestParam Long storeId) {
+        final List<Product> byStore = productService.findByStoreId(storeId);
+        logger.info(String.valueOf(storeId));
+        if (byStore == null || byStore.isEmpty()) {
+            throw new NoSuchElementException("Products for this Store not found");
+        }
+        return ResponseEntity.ok(ApiResponse.<List<Product>>builder().data(byStore).build());
     }
 }

@@ -24,9 +24,11 @@ public class StoreCategoryController extends AbstractController<StoreCategory> {
         return storeCategoryService;
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public ResponseEntity<ApiResponse<List<StoreCategory>>> getAllCategories() {
         final List<StoreCategory> storeCategories = storeCategoryService.findAll();
         return ResponseEntity.ok(ApiResponse.<List<StoreCategory>>builder().data(storeCategories).build());
     }
+
+
 }

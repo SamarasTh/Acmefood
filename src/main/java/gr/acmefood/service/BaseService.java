@@ -18,4 +18,6 @@ public interface BaseService<T extends BaseModel> {
     T get(Long id);
 
     List<T> findAll();
+
+    List<T> findAllById(Long id);
 }

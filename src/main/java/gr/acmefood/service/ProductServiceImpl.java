@@ -6,11 +6,21 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl extends BaseServiceImpl<Product> implements ProductService {
 
     private final ProductRepository productRepository;
+
+    @Override
+    public List<Product> findByStoreId(final Long storeId) {
+        List<Product> productsByStoreId = new ArrayList<>();
+        productsByStoreId = productRepository.findByStore_Id(storeId);
+        return productsByStoreId;
+    }
 
     @Override
     public JpaRepository<Product, Long> getRepository() {
