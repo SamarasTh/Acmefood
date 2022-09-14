@@ -45,7 +45,6 @@ public class ProductController extends AbstractController<Product> {
     @GetMapping(params = "storeId", value = "/products-by-store")
     public ResponseEntity<ApiResponse<List<Product>>> getByStoreId(@RequestParam Long storeId) {
         final List<Product> byStore = productService.findByStoreId(storeId);
-        logger.info(String.valueOf(storeId));
         if (byStore == null || byStore.isEmpty()) {
             throw new NoSuchElementException("Products for this Store not found");
         }

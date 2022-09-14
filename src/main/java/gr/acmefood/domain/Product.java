@@ -38,7 +38,7 @@ public class Product extends BaseModel {
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
     @JsonIgnore
     private Store store;
