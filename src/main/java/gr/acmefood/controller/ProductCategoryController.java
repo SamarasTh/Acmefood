@@ -23,15 +23,17 @@ public class ProductCategoryController extends AbstractController<ProductCategor
     private final ProductCategoryService productCategoryService;
 
     @Override
-    public BaseService<ProductCategory> getBaseService(){return productCategoryService;}
-
-    @GetMapping(params = "productCategoryName")
-    public ResponseEntity<ApiResponse<ProductCategory>> findByName(@RequestParam String name) {
-        final ProductCategory byProductCategoryName = productCategoryService.findByName(name);
-        if (byProductCategoryName == null) {
-            throw new NoSuchElementException("Product category not found");
-        }
-        return ResponseEntity.ok(ApiResponse.<ProductCategory>builder().data(byProductCategoryName).build());
+    public BaseService<ProductCategory> getBaseService() {
+        return productCategoryService;
     }
+
+//    @GetMapping(params = "productCategoryName")
+//    public ResponseEntity<ApiResponse<ProductCategory>> findByName(@RequestParam String name) {
+//        final ProductCategory byProductCategoryName = productCategoryService.findByName(name);
+//        if (byProductCategoryName == null) {
+//            throw new NoSuchElementException("Product category not found");
+//        }
+//        return ResponseEntity.ok(ApiResponse.<ProductCategory>builder().data(byProductCategoryName).build());
+//    }
 
 }

@@ -352,88 +352,89 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 
         //        PRODUCTS
 
-        List<Product> souvlakiProducts = List.of(
-                Product.builder().serial("SN11111100013121").name("Καλαμάκι Χοιρινό")
-                        .description("Συνοδεύεται από ψωμάκι ")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN11114100012").name("Kαλαμάκι Κοτόπουλο")
-                        .description("Συνοδεύεται από ψωμάκι ")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.20)).build(),
-                Product.builder().serial("SN1111100013").name("Τυλιχτό Γύρο Χοιρινό")
-                        .description("Πίτα γύρος χοιρινός με τα υλικά της επιλογής σας")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100014").name("Τυλιχτό Γύρο Κοτόπουλο")
-                        .description("Τυλιχτό Γύρο Κοτόπουλο με υλικά της επιλογής σας")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(3.20)).build(),
-                Product.builder().serial("SN1111100015").name("Κεμπάπ")
-                        .description("Συνοδεύεται από ψωμάκι")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100016").name("Κεμπάπ σε πίτα")
-                        .description("Πίτα κεμπάπ με τα υλικά της επιλογής σας")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(3.10)).build(),
-                Product.builder().serial("SN1111100017").name("Μπιφτέκι μοσχαρίσιο σε πίτα")
-                        .description("Πίτα μπιφτέκι μοσχαρίσιο με τα υλικά της επιλογής σας")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(4.10)).build(),
-                Product.builder().serial("SN1111100018").name("Λουκάνικο χοιρινό σε πίτα")
-                        .description("Πίτα λουκάνικο χοιρινό με τα υλικά της επιλογής σας")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(3.40)).build(),
-                Product.builder().serial("SN1111100015").name("Καλαμάκι μοσχαρίσιο σε πίτα")
-                        .description("Με Καλαμάκι μοσχαρίσιο, ντομάτα, μαρούλι ,πατάτες & BBQ sauce")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Μπιφτέκι κοτόπουλο")
-                        .description("Συνοδεύεται από ψωμάκι")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Λουκάνικο χοιρινό Τρικάλων")
-                        .description("Συνοδεύεται από ψωμάκι")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Καλαμάκι μανιτάρι")
-                        .description("Συνοδεύεται από ψωμάκι")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Μπιφτέκι λαχανικών")
-                        .description("Συνοδεύεται από ψωμάκι")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Φαλάφελ σε πίτα")
-                        .description("Πίτα φαλάφελ με τα υλικά της επιλογής σα")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Χαλούμι & μανιτάρι σε πίτα")
-                        .description("Χαλούμι & μανιτάρι σε πίτα")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build(),
-                Product.builder().serial("SN1111100015").name("Οικολογικό σε πίτα")
-                        .description("Οικολογικό")
-                        .productCategory(productCategory2)
-                        .store(souvlakiStore1)
-                        .price(BigDecimal.valueOf(2.10)).build()
-        );
+
+//        List<Product> souvlakiProducts = List.of(
+//                Product.builder().name("Καλαμάκι Χοιρινό")
+//                        .description("Συνοδεύεται από ψωμάκι ")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Kαλαμάκι Κοτόπουλο")
+//                        .description("Συνοδεύεται από ψωμάκι ")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.20)).build(),
+//                Product.builder().name("Τυλιχτό Γύρο Χοιρινό")
+//                        .description("Πίτα γύρος χοιρινός με τα υλικά της επιλογής σας")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Τυλιχτό Γύρο Κοτόπουλο")
+//                        .description("Τυλιχτό Γύρο Κοτόπουλο με υλικά της επιλογής σας")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(3.20)).build(),
+//                Product.builder().name("Κεμπάπ")
+//                        .description("Συνοδεύεται από ψωμάκι")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Κεμπάπ σε πίτα")
+//                        .description("Πίτα κεμπάπ με τα υλικά της επιλογής σας")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(3.10)).build(),
+//                Product.builder().name("Μπιφτέκι μοσχαρίσιο σε πίτα")
+//                        .description("Πίτα μπιφτέκι μοσχαρίσιο με τα υλικά της επιλογής σας")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(4.10)).build(),
+//                Product.builder().name("Λουκάνικο χοιρινό σε πίτα")
+//                        .description("Πίτα λουκάνικο χοιρινό με τα υλικά της επιλογής σας")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(3.40)).build(),
+//                Product.builder().name("Καλαμάκι μοσχαρίσιο σε πίτα")
+//                        .description("Με Καλαμάκι μοσχαρίσιο, ντομάτα, μαρούλι ,πατάτες & BBQ sauce")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Μπιφτέκι κοτόπουλο")
+//                        .description("Συνοδεύεται από ψωμάκι")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Λουκάνικο χοιρινό Τρικάλων")
+//                        .description("Συνοδεύεται από ψωμάκι")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Καλαμάκι μανιτάρι")
+//                        .description("Συνοδεύεται από ψωμάκι")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Μπιφτέκι λαχανικών")
+//                        .description("Συνοδεύεται από ψωμάκι")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Φαλάφελ σε πίτα")
+//                        .description("Πίτα φαλάφελ με τα υλικά της επιλογής σα")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Χαλούμι & μανιτάρι σε πίτα")
+//                        .description("Χαλούμι & μανιτάρι σε πίτα")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build(),
+//                Product.builder().name("Οικολογικό σε πίτα")
+//                        .description("Οικολογικό")
+//                        .productCategory(productCategory2)
+//                        .store(souvlakiStore1)
+//                        .price(BigDecimal.valueOf(2.10)).build()
+//        );
 
 //        List<Product> burgerProducts = List.of(
 //                Product.builder().serial("SN11111023116").name("Classic Burger")
@@ -587,8 +588,108 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 //
 //        );
 
-        List<Product> persistedSouvlakia = productService.createAll(souvlakiProducts);
+//        List<Product> persistedSouvlakia = productService.createAll(souvlakiProducts);
+
+        Store st = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝGGG").storeCategory(storeCategories.get(1))
+                .address("2 9,")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
+                .build();
+        assignProductsToStore(st, getListOfProductsForSouvlakiStores());
+        storeService.create(st);
 //        List<Product> persistedBurgers = productService.createAll(burgerProducts);
 //        List<Product> persistedCoffees = productService.createAll(coffeeProducts);
+    }
+
+    Store assignProductsToStore(Store store, List<Product> products) {
+        products.forEach(product -> product.setStore(store));
+        store.setProducts(products);
+        return store;
+    }
+
+    List<Product> getListOfProductsForSouvlakiStores() {
+        return List.of(
+                Product.builder().name("Καλαμάκι Χοιρινό")
+                        .description("Συνοδεύεται από ψωμάκι ")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Kαλαμάκι Κοτόπουλο")
+                        .description("Συνοδεύεται από ψωμάκι ")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.20)).build(),
+                Product.builder().name("Τυλιχτό Γύρο Χοιρινό")
+                        .description("Πίτα γύρος χοιρινός με τα υλικά της επιλογής σας")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Τυλιχτό Γύρο Κοτόπουλο")
+                        .description("Τυλιχτό Γύρο Κοτόπουλο με υλικά της επιλογής σας")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(3.20)).build(),
+                Product.builder().name("Κεμπάπ")
+                        .description("Συνοδεύεται από ψωμάκι")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Κεμπάπ σε πίτα")
+                        .description("Πίτα κεμπάπ με τα υλικά της επιλογής σας")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(3.10)).build(),
+                Product.builder().name("Μπιφτέκι μοσχαρίσιο σε πίτα")
+                        .description("Πίτα μπιφτέκι μοσχαρίσιο με τα υλικά της επιλογής σας")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(4.10)).build(),
+                Product.builder().name("Λουκάνικο χοιρινό σε πίτα")
+                        .description("Πίτα λουκάνικο χοιρινό με τα υλικά της επιλογής σας")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(3.40)).build(),
+                Product.builder().name("Καλαμάκι μοσχαρίσιο σε πίτα")
+                        .description("Με Καλαμάκι μοσχαρίσιο, ντομάτα, μαρούλι ,πατάτες & BBQ sauce")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Μπιφτέκι κοτόπουλο")
+                        .description("Συνοδεύεται από ψωμάκι")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Λουκάνικο χοιρινό Τρικάλων")
+                        .description("Συνοδεύεται από ψωμάκι")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Καλαμάκι μανιτάρι")
+                        .description("Συνοδεύεται από ψωμάκι")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Μπιφτέκι λαχανικών")
+                        .description("Συνοδεύεται από ψωμάκι")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Φαλάφελ σε πίτα")
+                        .description("Πίτα φαλάφελ με τα υλικά της επιλογής σα")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Χαλούμι & μανιτάρι σε πίτα")
+                        .description("Χαλούμι & μανιτάρι σε πίτα")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build(),
+                Product.builder().name("Οικολογικό σε πίτα")
+                        .description("Οικολογικό")
+                        .productCategory(getProductCategory("f"))
+                        .price(BigDecimal.valueOf(2.10)).build()
+        );
+    }
+
+    ProductCategory getProductCategory(String category) {
+
+        switch (category) {
+            case "f":
+                return productCategoryService.findByName("Food");
+            case "d":
+                return productCategoryService.findByName("Drink");
+            case "g":
+                return productCategoryService.findByName("Groceries");
+            case "c":
+                return productCategoryService.findByName("Coffee");
+            case "a":
+                return productCategoryService.findByName("Alcohol");
+            default:
+                return null;
+        }
     }
 }

@@ -15,20 +15,20 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 
     private final ProductRepository productRepository;
 
-    @Override
-    public List<Product> findByStoreId(final Long storeId) {
-        List<Product> productsByStoreId = new ArrayList<>();
-        productsByStoreId = productRepository.findByStore_Id(storeId);
-        return productsByStoreId;
-    }
+//    @Override
+//    public List<Product> findByStoreId(final Long storeId) {
+//        List<Product> productsByStoreId = new ArrayList<>();
+//        productsByStoreId = productRepository.findByStore_Id(storeId);
+//        return productsByStoreId;
+//    }
 
     @Override
     public JpaRepository<Product, Long> getRepository() {
         return productRepository;
     }
-
-    @Override
-    public Product findBySerial(String serial) {
-        return productRepository.findBySerial(serial);
-    }
+//
+//    @Override
+//    public Product findBySerial(String serial) {
+//        return productRepository.findBySerial(serial);
+//    }
 }

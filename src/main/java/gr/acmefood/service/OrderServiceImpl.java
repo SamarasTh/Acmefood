@@ -38,7 +38,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
 
         // If product is already contained in the order, don't add it again, just increase the quantity accordingly
         for (OrderItem oi : order.getOrderItems()) {
-            if (oi.getProduct().getSerial().equals(product.getSerial())) {
+            if (oi.getProduct().getId().equals(product.getId())) {
                 oi.setQuantity(oi.getQuantity() + quantity);
                 increasedQuantity = true;
                 break;
@@ -62,7 +62,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         if (checkNullability(order, product)) {
             return;
         }
-        order.getOrderItems().removeIf(oi -> oi.getProduct().getSerial().equals(product.getSerial()));
+        order.getOrderItems().removeIf(oi -> oi.getProduct().getId().equals(product.getId()));
         order.getOrderItems().add(newOrderItem(order, product, quantity));
 
         logger.debug("Product[{}] updated in Order[{}]", product, order);
@@ -74,7 +74,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
             return;
         }
 
-        order.getOrderItems().removeIf(oi -> oi.getProduct().getSerial().equals(product.getSerial()));
+        order.getOrderItems().removeIf(oi -> oi.getProduct().getId().equals(product.getId()));
         logger.debug("Product[{}] removed from Order[{}]", product, order);
     }
 
