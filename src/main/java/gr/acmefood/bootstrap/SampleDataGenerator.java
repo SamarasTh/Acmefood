@@ -121,70 +121,6 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         //        SOUVLAKI
 
 
-        Store souvlakiStore1 = Store.builder().name("Οι Σουβλάκες").storeCategory(storeCategories.get(1))
-                .address("Λεωφόρος Δεκελείας 57")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x260257@3x.png")
-                .build();
-        Store souvlakiStore2 = Store.builder().name("H Πόλη").storeCategory(storeCategories.get(1))
-                .address("Λ. Δεκελείας 130")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png")
-                .build();
-        Store souvlakiStore3 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
-                .address("Λεωφόρος Δεκελείας 83")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
-                .build();
-        Store souvlakiStore4 = Store.builder().name("Μπάρμπα Αλέξης").storeCategory(storeCategories.get(1))
-                .address("Σαλαμίνος 70")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x267109@3x.png")
-                .build();
-        Store souvlakiStore5 = Store.builder().name("Άγραφα 1977").storeCategory(storeCategories.get(1))
-                .address("Τσούντα 49,")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254143@3x.png")
-                .build();
-        Store souvlakiStore6 = Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(1))
-                .address("Λεωφόρος Ηρακλείου 252")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png")
-                .build();
-        Store souvlakiStore7 = Store.builder().name("Ο Δήμος").storeCategory(storeCategories.get(1))
-                .address("Σαρδέων 4")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254990@3x.png")
-                .build();
-        Store souvlakiStore8 = Store.builder().name("Σάββας κεμπάπ").storeCategory(storeCategories.get(1))
-                .address("Λεωφόρος Δεκελείας 80,")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x253721@3x.png")
-                .build();
-        Store souvlakiStore9 = Store.builder().name("Ψητό Γεύσεις").storeCategory(storeCategories.get(1))
-                .address("Καυταντζόγλου 7")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x1650972097_292808@3x.png")
-                .build();
-        Store souvlakiStore10 = Store.builder().name("Της πόλης το γυροτεχνείο").storeCategory(storeCategories.get(1))
-                .address("Πίνδου 47,")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257753@3x.png")
-                .build();
-        Store souvlakiStore11 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ").storeCategory(storeCategories.get(1))
-                .address("Δεκελείας 9,")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
-                .build();
-        Store souvlakiStore12 = Store.builder().name("Il souvlaki").storeCategory(storeCategories.get(1))
-                .address("Πάρσης 25")
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x1649066818_292810@3x.png")
-                .build();
-        Store souvlakiStore13 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ").storeCategory(storeCategories.get(1))
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
-                .build();
-        Store souvlakiStore14 = Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(1))
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png")
-                .build();
-        Store souvlakiStore15 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
-                .build();
-        Store souvlakiStore16 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
-                .build();
-        Store souvlakiStore17 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
-                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
-                .build();
-
         //    BURGERS
         Store burgerStore1 = Store.builder().name("Butcher's Burger & steak house ").storeCategory(storeCategories.get(2))
                 .address("ΒΕΪΚΟΥ 43")
@@ -302,18 +238,18 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 //        List<Store> persistedBurgerStores = storeService.createAll(burgerStores);
 //        List<Store> persistedCoffeeStores = storeService.createAll(coffeeStores);
 
-        Store persistedSouvlakiStore1 = storeService.create(souvlakiStore1);
-        Store persistedSouvlakiStore2 = storeService.create(souvlakiStore2);
-        Store persistedSouvlakiStore3 = storeService.create(souvlakiStore3);
-        Store persistedSouvlakiStore4 = storeService.create(souvlakiStore4);
-        Store persistedSouvlakiStore5 = storeService.create(souvlakiStore5);
-        Store persistedSouvlakiStore6 = storeService.create(souvlakiStore6);
-        Store persistedSouvlakiStore7 = storeService.create(souvlakiStore7);
-        Store persistedSouvlakiStore8 = storeService.create(souvlakiStore8);
-        Store persistedSouvlakiStore9 = storeService.create(souvlakiStore9);
-        Store persistedSouvlakiStore10 = storeService.create(souvlakiStore10);
-        Store persistedSouvlakiStore11 = storeService.create(souvlakiStore11);
-        Store persistedSouvlakiStore12 = storeService.create(souvlakiStore12);
+//        Store persistedSouvlakiStore1 = storeService.create(souvlakiStore1);
+//        Store persistedSouvlakiStore2 = storeService.create(souvlakiStore2);
+//        Store persistedSouvlakiStore3 = storeService.create(souvlakiStore3);
+//        Store persistedSouvlakiStore4 = storeService.create(souvlakiStore4);
+//        Store persistedSouvlakiStore5 = storeService.create(souvlakiStore5);
+//        Store persistedSouvlakiStore6 = storeService.create(souvlakiStore6);
+//        Store persistedSouvlakiStore7 = storeService.create(souvlakiStore7);
+//        Store persistedSouvlakiStore8 = storeService.create(souvlakiStore8);
+//        Store persistedSouvlakiStore9 = storeService.create(souvlakiStore9);
+//        Store persistedSouvlakiStore10 = storeService.create(souvlakiStore10);
+//        Store persistedSouvlakiStore11 = storeService.create(souvlakiStore11);
+//        Store persistedSouvlakiStore12 = storeService.create(souvlakiStore12);
 //        Store persistedSouvlakiStore13 = storeService.create(souvlakiStore13);
 //        Store persistedSouvlakiStore14 = storeService.create(souvlakiStore14);
 //        Store persistedSouvlakiStore15 = storeService.create(souvlakiStore15);
@@ -589,13 +525,98 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 //        );
 
 //        List<Product> persistedSouvlakia = productService.createAll(souvlakiProducts);
-
-        Store st = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝGGG").storeCategory(storeCategories.get(1))
+        Store st1 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ").storeCategory(storeCategories.get(1))
                 .address("2 9,")
                 .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
                 .build();
-        assignProductsToStore(st, getListOfProductsForSouvlakiStores());
-        storeService.create(st);
+        Store st2 = Store.builder().name("Οι Σουβλάκες").storeCategory(storeCategories.get(1))
+                .address("Λεωφόρος Δεκελείας 57")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x260257@3x.png")
+                .build();
+        Store st3 = Store.builder().name("H Πόλη").storeCategory(storeCategories.get(1))
+                .address("Λ. Δεκελείας 130")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x251107@3x.png")
+                .build();
+        Store st4 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
+                .address("Λεωφόρος Δεκελείας 83")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
+                .build();
+        Store st5 = Store.builder().name("Μπάρμπα Αλέξης").storeCategory(storeCategories.get(1))
+                .address("Σαλαμίνος 70")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x267109@3x.png")
+                .build();
+        Store st6 = Store.builder().name("Άγραφα 1977").storeCategory(storeCategories.get(1))
+                .address("Τσούντα 49,")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254143@3x.png")
+                .build();
+        Store st7 = Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(1))
+                .address("Λεωφόρος Ηρακλείου 252")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png")
+                .build();
+        Store st8 = Store.builder().name("Ο Δήμος").storeCategory(storeCategories.get(1))
+                .address("Σαρδέων 4")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x254990@3x.png")
+                .build();
+        Store st9 = Store.builder().name("Σάββας κεμπάπ").storeCategory(storeCategories.get(1))
+                .address("Λεωφόρος Δεκελείας 80,")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x253721@3x.png")
+                .build();
+        Store st10 = Store.builder().name("Ψητό Γεύσεις").storeCategory(storeCategories.get(1))
+                .address("Καυταντζόγλου 7")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x1650972097_292808@3x.png")
+                .build();
+        Store st11 = Store.builder().name("Της πόλης το γυροτεχνείο").storeCategory(storeCategories.get(1))
+                .address("Πίνδου 47,")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257753@3x.png")
+                .build();
+        Store st12 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ").storeCategory(storeCategories.get(1))
+                .address("Δεκελείας 9,")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
+                .build();
+        Store st13 = Store.builder().name("Il souvlaki").storeCategory(storeCategories.get(1))
+                .address("Πάρσης 25")
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x1649066818_292810@3x.png")
+                .build();
+        Store st14 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ").storeCategory(storeCategories.get(1))
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
+                .build();
+        Store st15 = Store.builder().name("Πιτο...μπερδέματα").storeCategory(storeCategories.get(1))
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x259864@3x.png")
+                .build();
+        Store st16 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
+                .build();
+        Store st17 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
+                .build();
+        Store st18 = Store.builder().name("Evripidis Grill").storeCategory(storeCategories.get(1))
+                .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x1574@3x.png")
+                .build();
+
+        assignProductsToStore(st1, getListOfProductsForSouvlakiStores());
+        storeService.create(st1);
+        assignProductsToStore(st2, getListOfProductsForSouvlakiStores());
+        storeService.create(st2);
+        assignProductsToStore(st3, getListOfProductsForSouvlakiStores());
+        storeService.create(st3);
+        assignProductsToStore(st4, getListOfProductsForSouvlakiStores());
+        storeService.create(st4);
+        assignProductsToStore(st5, getListOfProductsForSouvlakiStores());
+        storeService.create(st5);
+        assignProductsToStore(st6, getListOfProductsForSouvlakiStores());
+        storeService.create(st6);
+        assignProductsToStore(st7, getListOfProductsForSouvlakiStores());
+        storeService.create(st7);
+        assignProductsToStore(st8, getListOfProductsForSouvlakiStores());
+        storeService.create(st8);
+        assignProductsToStore(st9, getListOfProductsForSouvlakiStores());
+        storeService.create(st9);
+        assignProductsToStore(st10, getListOfProductsForSouvlakiStores());
+        storeService.create(st10);
+        assignProductsToStore(st11, getListOfProductsForSouvlakiStores());
+        storeService.create(st11);
+        assignProductsToStore(st12, getListOfProductsForSouvlakiStores());
+        storeService.create(st12);
 //        List<Product> persistedBurgers = productService.createAll(burgerProducts);
 //        List<Product> persistedCoffees = productService.createAll(coffeeProducts);
     }
