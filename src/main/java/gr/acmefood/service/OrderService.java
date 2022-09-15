@@ -1,9 +1,6 @@
 package gr.acmefood.service;
 
-import gr.acmefood.domain.Account;
-import gr.acmefood.domain.Order;
-import gr.acmefood.domain.PaymentMethod;
-import gr.acmefood.domain.Product;
+import gr.acmefood.domain.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,7 +10,7 @@ public interface OrderService extends BaseService<Order> {
 
     Order startOrder(Account account);
 
-    void addItem(Order order, Product product, int quantity);
+    List<OrderItem> addItem(Order order, Product product, int quantity);
 
     void updateItem(Order order, Product product, int quantity);
 

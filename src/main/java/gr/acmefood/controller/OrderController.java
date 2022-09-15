@@ -50,18 +50,18 @@ public class OrderController extends AbstractController<Order> {
         }
         return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(retrievingAllPlacedOrders).build());
     }
+    @PostMapping("/addItemInOrder")
+    public ResponseEntity<ApiResponse<List<OrderItem>>> addItemInOrder(@RequestBody Order order,@RequestBody Product product, @RequestBody int quantity) {
+        List<OrderItem> addingItemInOrder = orderService.addItem(order,product, quantity);
+        logger.info(String.valueOf(orderService));
+           return ResponseEntity.ok(ApiResponse.<List<OrderItem>>builder().data(addingItemInOrder).build());
+    }
 
-//    @PutMapping
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void update (@Valid @RequestBody final List<OrderItem> orderItems) {getBaseService().update((Order) orderItems);}
+    @DeleteMapping(path="/{id}")
+    public void deleteOrder(@PathVariable Long id)
+    {
+        orderService.deleteById(id);
+        logger.info(String.valueOf(orderService));
+    }
 
-//    @GetMapping(params = "addItemsInOrder")
-//    public ResponseEntity<ApiResponse<List<OrderItem>>> addItemsInOrder(@RequestParam Order order,@RequestParam Product product, @RequestParam int quantity) {
-//        List<OrderItem> addingItemsInOrder = orderService.addItem(order,product, quantity);
-//        logger.info(String.valueOf(orderService));
-//        if (addingItemsInOrder == null) {
-//            throw new NoSuchElementException("Items not found");
-//        }
-//        return ResponseEntity.ok(ApiResponse.<List<OrderItem>>builder().data(addingItemsInOrder).build());
-//    }
 }
