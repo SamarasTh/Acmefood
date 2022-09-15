@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    Product findBySerial(String serial);
-
-    List<Product> findByStore_Id(Long id);
+//    Product findBySerial(String serial);
+//
+//    List<Product> findByStore_Id(Long id);
 }

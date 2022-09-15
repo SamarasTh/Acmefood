@@ -8,4 +8,6 @@ public interface StoreService extends BaseService<Store> {
     List<Store> findByStoreCategoryId(Long storeCategoryId);
 
     Store findByName(String name);
+
+    Store findById(Long id);
 }

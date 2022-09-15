@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -31,5 +33,15 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
     @Override
     public Store findByName(final String name) {
         return storeRepository.findByName(name);
+    }
+
+    @Override
+    public Store findById(final Long id) {
+        Optional<Store> store = storeRepository.findById(id);
+        if (store.isPresent()) {
+            return store.get();
+        } else {
+            throw new NoSuchElementException("Store with id: " + id + " does not exists!");
+        }
     }
 }

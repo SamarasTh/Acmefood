@@ -1,6 +1,7 @@
 package gr.acmefood.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -32,13 +33,14 @@ public class Store extends BaseModel {
 //    @OneToOne(fetch = FetchType.EAGER)
     private String address;
 
-    @NotNull
-//    mappedBy = "store",
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Product> products;
 
     @NotNull
     @Column(length = 1000)
     private String imgUrl;
+
 
 }
