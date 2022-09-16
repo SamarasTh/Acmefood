@@ -49,12 +49,6 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
         return getRepository().findById(id).orElseThrow(() -> new NoSuchElementException("Element not found"));
     }
 
-    @Transactional(readOnly = true)
-    @Override
-    public List<T> findAllById(final Long id) {
-        logger.trace("Retrieving items with id {}.", id);
-        return getRepository().findAllById(Collections.singleton(id));
-    }
 
     @Transactional(readOnly = true)
     @Override
