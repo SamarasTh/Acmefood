@@ -30,11 +30,11 @@ public class Store extends BaseModel {
 
     @NotNull
     @Column(length = 50, nullable = false)
-//    @OneToOne(fetch = FetchType.EAGER)
     private String address;
 
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @NotNull
     @JsonIgnore
     private List<Product> products;
 

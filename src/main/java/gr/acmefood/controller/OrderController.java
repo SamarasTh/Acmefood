@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -33,7 +34,7 @@ public class OrderController extends AbstractController<Order> {
     }
 
     @GetMapping(params = "submitDate")
-    public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@RequestParam Date submitDate) {
+    public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@Valid @RequestParam Date submitDate) {
         final List<Order> bySubmitDate = orderService.findBySubmitDate(submitDate);
         if (bySubmitDate == null) {
             throw new NoSuchElementException("Order not found");
