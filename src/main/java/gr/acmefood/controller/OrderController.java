@@ -56,12 +56,4 @@ public class OrderController extends AbstractController<Order> {
         logger.info(String.valueOf(orderService));
            return ResponseEntity.ok(ApiResponse.<List<OrderItem>>builder().data(addingItemInOrder).build());
     }
-
-    @DeleteMapping(path="/{id}")
-    public void deleteOrder(@PathVariable Long id)
-    {
-        orderService.deleteById(id);
-        logger.info(String.valueOf(orderService));
-    }
-
 }
