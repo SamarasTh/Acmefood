@@ -18,5 +18,4 @@ public interface BaseService<T extends BaseModel> {
 
     List<T> findAll();
 
-    List<T> findAllById(Long id);
 }

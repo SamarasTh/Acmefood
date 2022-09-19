@@ -33,7 +33,7 @@ public class OrderController extends AbstractController<Order> {
     }
 
     @GetMapping(params = "submitDate")
-    public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@RequestParam Date submitDate) {
+    public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@Valid @RequestParam Date submitDate) {
         final List<Order> bySubmitDate = orderService.findBySubmitDate(submitDate);
         if (bySubmitDate == null) {
             throw new NoSuchElementException("Order not found");

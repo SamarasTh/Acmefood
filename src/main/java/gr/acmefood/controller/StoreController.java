@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -40,7 +40,7 @@ public class StoreController extends AbstractController<Store> {
     }
 
     @GetMapping(params = "storeName")
-    public ResponseEntity<ApiResponse<Store>> findByName(@RequestParam String storeName) {
+    public ResponseEntity<ApiResponse<Store>> findByName(@Valid @RequestParam String storeName) {
         final Store byStoreName = storeService.findByName(storeName);
         if (byStoreName == null) {
             throw new NoSuchElementException("Store not found");

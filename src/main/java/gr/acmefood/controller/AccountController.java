@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import java.util.NoSuchElementException;
 
@@ -23,24 +24,24 @@ public class AccountController extends AbstractController<Account> {
     protected BaseService<Account> getBaseService() {
         return accountService;
     }
+
     @GetMapping(params = "email")
-    public ResponseEntity<ApiResponse<Account>> findByEmail(@Email  @RequestParam String email){
+    public ResponseEntity<ApiResponse<Account>> findByEmail(@Email @RequestParam String email) {
         final Account accountFoundByEmail = accountService.findByEmail(email);
-        if (accountFoundByEmail == null){
+        if (accountFoundByEmail == null) {
             throw new NoSuchElementException("Account not found");
         }
         return ResponseEntity.ok(ApiResponse.<Account>builder().data(accountFoundByEmail).build());
     }
 
     @GetMapping(params = "phone")
-    public ResponseEntity<ApiResponse<Account>> findByPhone(@RequestParam String phone){
+    public ResponseEntity<ApiResponse<Account>> findByPhone(@Valid @RequestParam String phone) {
         final Account accountFoundByPhone = accountService.findByPhone(phone);
-        if (accountFoundByPhone == null){
+        if (accountFoundByPhone == null) {
             throw new NoSuchElementException("Account not found");
         }
         return ResponseEntity.ok(ApiResponse.<Account>builder().data(accountFoundByPhone).build());
     }
-
 
 
 }
