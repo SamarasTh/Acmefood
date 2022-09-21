@@ -1,12 +1,11 @@
 package gr.acmefood.controller;
 
-import gr.acmefood.domain.Account;
-import gr.acmefood.domain.Order;
-import gr.acmefood.domain.Product;
+import gr.acmefood.domain.*;
 import gr.acmefood.service.BaseService;
 import gr.acmefood.service.OrderService;
 import gr.acmefood.transfer.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,5 +39,21 @@ public class OrderController extends AbstractController<Order> {
             throw new NoSuchElementException("Order not found");
         }
         return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(bySubmitDate).build());
+    }
+
+    @GetMapping("allOrders")
+    public ResponseEntity<ApiResponse<List<Order>>> retrieveAllPlacedOrders() {
+        List<Order> retrievingAllPlacedOrders = orderService.findAll();
+        logger.info(String.valueOf(orderService));
+        if (retrievingAllPlacedOrders == null) {
+            throw new NoSuchElementException("Placed orders not found");
+        }
+        return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(retrievingAllPlacedOrders).build());
+    }
+    @PostMapping("/addItemInOrder")
+    public ResponseEntity<ApiResponse<List<OrderItem>>> addItemInOrder(@RequestBody Order order,@RequestBody Product product, @RequestBody int quantity) {
+        List<OrderItem> addingItemInOrder = orderService.addItem(order,product, quantity);
+        logger.info(String.valueOf(orderService));
+           return ResponseEntity.ok(ApiResponse.<List<OrderItem>>builder().data(addingItemInOrder).build());
     }
 }

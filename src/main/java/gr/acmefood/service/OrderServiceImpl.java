@@ -29,9 +29,9 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public void addItem(Order order, Product product, int quantity) {
+    public List<OrderItem> addItem(Order order, Product product, int quantity) {
         if (checkNullability(order, product)) {
-            return;
+            return null;
 
         }
         boolean increasedQuantity = false;
@@ -51,6 +51,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
 
         logger.debug("Product[{}] added to Order[{}]", product, order);
 
+        return null;
     }
 
     private OrderItem newOrderItem(Order order, Product product, int quantity) {
