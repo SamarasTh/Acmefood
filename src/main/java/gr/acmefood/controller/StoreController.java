@@ -32,7 +32,6 @@ public class StoreController extends AbstractController<Store> {
     @GetMapping(params = "storeCategoryId", value = "/store-by-category")
     public ResponseEntity<ApiResponse<List<Store>>> findByStoreCategory(@RequestParam Long storeCategoryId) {
         final List<Store> byStoreCategory = storeService.findByStoreCategoryId(storeCategoryId);
-        logger.info(String.valueOf(storeCategoryId));
         if (byStoreCategory == null || byStoreCategory.isEmpty()) {
             throw new NoSuchElementException("Stores for this category not found");
         }

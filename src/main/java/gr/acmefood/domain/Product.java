@@ -37,4 +37,9 @@ public class Product extends BaseModel {
     @NotNull
     @JsonIgnore
     private Store store;
+
+    @NotNull
+    @Column(length = 1000)
+    private String imgUrl;
+
 }
