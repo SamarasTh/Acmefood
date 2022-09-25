@@ -31,8 +31,8 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
     }
 
     @Override
-    public Store findByName(final String name) {
-        return storeRepository.findByName(name);
+    public List<Store> findByNameLike(final String name) {
+        return storeRepository.findByNameContainingIgnoreCase(name);
     }
 
     @Override

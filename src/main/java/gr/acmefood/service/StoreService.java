@@ -7,7 +7,7 @@ import java.util.List;
 public interface StoreService extends BaseService<Store> {
     List<Store> findByStoreCategoryId(Long storeCategoryId);
 
-    Store findByName(String name);
+    List<Store> findByNameLike(String name);
 
     Store findById(Long id);
 }

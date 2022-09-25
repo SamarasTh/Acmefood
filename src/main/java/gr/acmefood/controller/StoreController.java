@@ -38,13 +38,13 @@ public class StoreController extends AbstractController<Store> {
         return ResponseEntity.ok(ApiResponse.<List<Store>>builder().data(byStoreCategory).build());
     }
 
-    @GetMapping(params = "storeName")
-    public ResponseEntity<ApiResponse<Store>> findByName(@Valid @RequestParam String storeName) {
-        final Store byStoreName = storeService.findByName(storeName);
+    @GetMapping(params = "storeName", value = "/stores-by-name")
+    public ResponseEntity<ApiResponse<List<Store>>> findByName(@Valid @RequestParam String storeName) {
+        final List<Store> byStoreName = storeService.findByNameLike(storeName);
         if (byStoreName == null) {
             throw new NoSuchElementException("Store not found");
         }
-        return ResponseEntity.ok(ApiResponse.<Store>builder().data(byStoreName).build());
+        return ResponseEntity.ok(ApiResponse.<List<Store>>builder().data(byStoreName).build());
     }
 
     @GetMapping(params = "storeId", value = "/products-by-store")
