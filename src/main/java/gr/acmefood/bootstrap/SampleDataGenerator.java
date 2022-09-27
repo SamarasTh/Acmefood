@@ -38,23 +38,23 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         List<StoreCategory> storeCategories = List.of(
                 StoreCategory.builder().name("Pizza")
                         .imgUrl("assets/img/service/1.png").build(),
-                StoreCategory.builder().name("Σουβλάκια")
+                StoreCategory.builder().name("Souvlaki")
                         .imgUrl("assets/img/service/8.png").build(),
                 StoreCategory.builder().name("Burger")
                         .imgUrl("assets/img/service/3.png").build(),
-                StoreCategory.builder().name("Καφές")
+                StoreCategory.builder().name("Coffee")
                         .imgUrl("assets/img/service/9.png").build(),
-                StoreCategory.builder().name("Κινέζικο")
+                StoreCategory.builder().name("Chinese")
                         .imgUrl("assets/img/service/2.png").build(),
-                StoreCategory.builder().name("Ζυμαρικά")
+                StoreCategory.builder().name("Pasta")
                         .imgUrl("assets/img/service/4.png").build(),
                 StoreCategory.builder().name("Vegetarian")
                         .imgUrl("assets/img/service/5.png").build(),
-                StoreCategory.builder().name("Μεξικάνικο")
+                StoreCategory.builder().name("Mexican")
                         .imgUrl("assets/img/service/6.png").build(),
-                StoreCategory.builder().name("Mαγειρευτά")
+                StoreCategory.builder().name("Homemade")
                         .imgUrl("assets/img/service/7.png").build(),
-                StoreCategory.builder().name("Γλυκά")
+                StoreCategory.builder().name("Sweet")
                         .imgUrl("assets/img/service/10.png").build(),
                 StoreCategory.builder().name("Groceries")
                         .imgUrl("assets/img/service/11.png").build(),

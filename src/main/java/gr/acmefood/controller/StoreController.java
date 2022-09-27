@@ -56,4 +56,13 @@ public class StoreController extends AbstractController<Store> {
         return ResponseEntity.ok(ApiResponse.<List<Product>>builder().data(byStore).build());
     }
 
+    @GetMapping(params = "storeId", value = "/store-by-storeid")
+    public ResponseEntity<ApiResponse<Store>> getStoreByStoreId(@RequestParam Long storeId) {
+        final Store store = storeService.findById(storeId);
+        if (store == null) {
+            throw new NoSuchElementException("Store for this Store id not found");
+        }
+        return ResponseEntity.ok(ApiResponse.<Store>builder().data(store).build());
+    }
+
 }
