@@ -20,6 +20,7 @@ import java.util.List;
 public class Order extends BaseModel {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(foreignKey = @ForeignKey(name = "FK__ORDERS__ACCOUNT__ID"))
     @NotNull
     private Account account;
 
@@ -34,7 +35,7 @@ public class Order extends BaseModel {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @NotNull
-    private List<@NotNull OrderItem> orderItems;
+    private List<OrderItem> orderItems;
 
     @Enumerated(EnumType.STRING)
     @NotNull

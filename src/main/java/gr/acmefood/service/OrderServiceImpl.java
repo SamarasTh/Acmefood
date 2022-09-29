@@ -80,7 +80,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
-    public Order checkout(Order order, PaymentMethod paymentMethod) {
+    public Order checkout(Order order) {
         if (!validate(order)) {
             logger.warn("Order should have Account, order items, payment type and cost defined before being able to " +
                     "checkout the order.");
@@ -88,10 +88,11 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         }
 
         // Set all order fields with proper values
-        order.setPaymentMethod(paymentMethod);
         order.setCost(calculateTotalCost(order));
         order.setSubmitDate(new Date());
         logger.info("Total Order cost is : {} € ", order.getCost());
+        logger.info("{}", order);
+        logger.info("{}", order.getAccount());
         return create(order);
     }
 

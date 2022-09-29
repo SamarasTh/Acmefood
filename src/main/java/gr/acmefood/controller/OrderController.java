@@ -26,20 +26,6 @@ public class OrderController extends AbstractController<Order> {
         return orderService;
     }
 
-    @PostMapping("start")
-    public ResponseEntity<ApiResponse<Order>> startOrder(@RequestBody Account account) {
-        final Order startingOrder = orderService.startOrder(account);
-        return ResponseEntity.ok(ApiResponse.<Order>builder().data(startingOrder).build());
-    }
-
-    @GetMapping(params = "submitDate")
-    public ResponseEntity<ApiResponse<List<Order>>> findBySubmitDate(@Valid @RequestParam Date submitDate) {
-        final List<Order> bySubmitDate = orderService.findBySubmitDate(submitDate);
-        if (bySubmitDate == null) {
-            throw new NoSuchElementException("Order not found");
-        }
-        return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(bySubmitDate).build());
-    }
 
     @GetMapping("allOrders")
     public ResponseEntity<ApiResponse<List<Order>>> retrieveAllPlacedOrders() {
@@ -50,10 +36,14 @@ public class OrderController extends AbstractController<Order> {
         }
         return ResponseEntity.ok(ApiResponse.<List<Order>>builder().data(retrievingAllPlacedOrders).build());
     }
-    @PostMapping("/addItemInOrder")
-    public ResponseEntity<ApiResponse<List<OrderItem>>> addItemInOrder(@RequestBody Order order,@RequestBody Product product, @RequestBody int quantity) {
-        List<OrderItem> addingItemInOrder = orderService.addItem(order,product, quantity);
-        logger.info(String.valueOf(orderService));
-           return ResponseEntity.ok(ApiResponse.<List<OrderItem>>builder().data(addingItemInOrder).build());
+
+    @Override
+    @PostMapping
+    public ResponseEntity<ApiResponse<Order>> create(@RequestBody Order order) {
+        logger.info("{}", order);
+        return ResponseEntity.ok(ApiResponse.<Order>builder().data(
+                orderService.checkout(order)
+        ).build());
+
     }
 }

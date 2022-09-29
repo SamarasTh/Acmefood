@@ -20,9 +20,8 @@ public class OrderItem extends BaseModel {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
-    @NotNull
     private Order order;
 
     @NotNull

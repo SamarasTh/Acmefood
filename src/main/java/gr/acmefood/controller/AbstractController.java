@@ -33,22 +33,5 @@ public abstract class AbstractController<T extends BaseModel> extends BaseCompon
                 HttpStatus.CREATED);
     }
 
-    @PostMapping(headers = "content=list")
-    public ResponseEntity<ApiResponse<List<T>>> createAll(@RequestBody List<T> entities) {
-        return new ResponseEntity<>(ApiResponse.<List<T>>builder().data(getBaseService().createAll(entities)).build(),
-                HttpStatus.CREATED);
-    }
-
-    @PutMapping
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody final T entity) {
-        getBaseService().update(entity);
-    }
-
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") final Long id) {
-        getBaseService().deleteById(id);
-    }
 
 }

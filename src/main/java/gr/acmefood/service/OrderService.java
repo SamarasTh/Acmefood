@@ -16,8 +16,9 @@ public interface OrderService extends BaseService<Order> {
 
     void removeItem(Order order, Product product);
 
-    Order checkout(Order order, PaymentMethod paymentMethod);
+    Order checkout(Order order);
 
     List<Order> findBySubmitDate(Date submitDate);
+
     BigDecimal calculateTotalCost(Order order);
 }
