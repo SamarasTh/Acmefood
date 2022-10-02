@@ -2,5 +2,5 @@ package gr.acmefood.domain;
 
 public enum PaymentMethod {
 
-    CASH, WIRE, PayPal
+    CASH, WIRE, PAY_PAL
 }

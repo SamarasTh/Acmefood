@@ -1,6 +1,7 @@
 package gr.acmefood.controller;
 
 import gr.acmefood.domain.Account;
+import gr.acmefood.domain.Store;
 import gr.acmefood.service.AccountService;
 import gr.acmefood.service.BaseService;
 import gr.acmefood.transfer.ApiResponse;
@@ -8,9 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Email;
 import java.util.NoSuchElementException;
+
 
 @RequiredArgsConstructor
 @RestController
@@ -25,24 +25,14 @@ public class AccountController extends AbstractController<Account> {
         return accountService;
     }
 
-    @GetMapping(params = "email")
-    public ResponseEntity<ApiResponse<Account>> findByEmail(@Email @RequestParam String email) {
-        final Account accountFoundByEmail = accountService.findByEmail(email);
-        if (accountFoundByEmail == null) {
-            throw new NoSuchElementException("Account not found");
+    @GetMapping(params = "accountId", value = "/account-by-accountId")
+    public ResponseEntity<ApiResponse<Account>> getAccountById(@RequestParam Long accountId) {
+        final Account account = accountService.findById(accountId);
+        if (account == null) {
+            throw new NoSuchElementException("Account for this Account_id not found");
         }
-        return ResponseEntity.ok(ApiResponse.<Account>builder().data(accountFoundByEmail).build());
+        return ResponseEntity.ok(ApiResponse.<Account>builder().data(account).build());
     }
-
-    @GetMapping(params = "phone")
-    public ResponseEntity<ApiResponse<Account>> findByPhone(@Valid @RequestParam String phone) {
-        final Account accountFoundByPhone = accountService.findByPhone(phone);
-        if (accountFoundByPhone == null) {
-            throw new NoSuchElementException("Account not found");
-        }
-        return ResponseEntity.ok(ApiResponse.<Account>builder().data(accountFoundByPhone).build());
-    }
-
 
 }
 
