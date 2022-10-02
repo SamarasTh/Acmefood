@@ -23,62 +23,6 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         return orderRepository;
     }
 
-    @Override
-    public Order startOrder(Account account) {
-        return Order.builder().account(account).orderItems(new ArrayList<>()).build();
-    }
-
-    @Override
-    public List<OrderItem> addItem(Order order, Product product, int quantity) {
-        if (checkNullability(order, product)) {
-            return null;
-
-        }
-        boolean increasedQuantity = false;
-
-        // If product is already contained in the order, don't add it again, just increase the quantity accordingly
-        for (OrderItem oi : order.getOrderItems()) {
-            if (oi.getProduct().getId().equals(product.getId())) {
-                oi.setQuantity(oi.getQuantity() + quantity);
-                increasedQuantity = true;
-                break;
-            }
-        }
-
-        if (!increasedQuantity) {
-            order.getOrderItems().add(newOrderItem(order, product, quantity));
-        }
-
-        logger.debug("Product[{}] added to Order[{}]", product, order);
-
-        return null;
-    }
-
-    private OrderItem newOrderItem(Order order, Product product, int quantity) {
-        return OrderItem.builder().product(product).order(order).quantity(quantity).cost(product.getPrice()).build();
-    }
-
-    @Override
-    public void updateItem(Order order, Product product, int quantity) {
-        if (checkNullability(order, product)) {
-            return;
-        }
-        order.getOrderItems().removeIf(oi -> oi.getProduct().getId().equals(product.getId()));
-        order.getOrderItems().add(newOrderItem(order, product, quantity));
-
-        logger.debug("Product[{}] updated in Order[{}]", product, order);
-    }
-
-    @Override
-    public void removeItem(Order order, Product product) {
-        if (checkNullability(order, product)) {
-            return;
-        }
-
-        order.getOrderItems().removeIf(oi -> oi.getProduct().getId().equals(product.getId()));
-        logger.debug("Product[{}] removed from Order[{}]", product, order);
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
     public Order checkout(Order order) {
         if (!validate(order)) {
@@ -101,18 +45,12 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     }
 
     @Override
-    public List<Order> findBySubmitDate(final Date submitDate) {
-        return null;
-    }
-
-    @Override
     public BigDecimal calculateTotalCost(Order order) {
         // Calculate total order cost based on orderItem price
         //@formatter:off
         BigDecimal finalCost = order.getOrderItems().stream()
                 .map(oi -> oi.getCost().multiply(BigDecimal.valueOf(oi.getQuantity())))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-
         return finalCost;
     }
 

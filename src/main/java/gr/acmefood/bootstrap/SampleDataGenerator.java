@@ -37,29 +37,29 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
 
         List<StoreCategory> storeCategories = List.of(
                 StoreCategory.builder().name("Pizza")
-                        .imgUrl("assets/img/service/1.png").build(),
+                        .imgUrl("assets/img/service/final/1.png").build(),
                 StoreCategory.builder().name("Souvlaki")
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 StoreCategory.builder().name("Burger")
-                        .imgUrl("assets/img/service/3.png").build(),
+                        .imgUrl("assets/img/service/final/10.png").build(),
                 StoreCategory.builder().name("Coffee")
-                        .imgUrl("assets/img/service/9.png").build(),
+                        .imgUrl("assets/img/service/final/3.png").build(),
                 StoreCategory.builder().name("Chinese")
-                        .imgUrl("assets/img/service/2.png").build(),
+                        .imgUrl("assets/img/service/final/4.png").build(),
                 StoreCategory.builder().name("Pasta")
-                        .imgUrl("assets/img/service/4.png").build(),
+                        .imgUrl("assets/img/service/final/5.png").build(),
                 StoreCategory.builder().name("Vegetarian")
-                        .imgUrl("assets/img/service/5.png").build(),
+                        .imgUrl("assets/img/service/final/11.png").build(),
                 StoreCategory.builder().name("Mexican")
-                        .imgUrl("assets/img/service/6.png").build(),
+                        .imgUrl("assets/img/service/final/6.png").build(),
                 StoreCategory.builder().name("Homemade")
-                        .imgUrl("assets/img/service/7.png").build(),
+                        .imgUrl("assets/img/service/final/12.png").build(),
                 StoreCategory.builder().name("Sweet")
-                        .imgUrl("assets/img/service/10.png").build(),
+                        .imgUrl("assets/img/service/final/8.png").build(),
                 StoreCategory.builder().name("Groceries")
-                        .imgUrl("assets/img/service/11.png").build(),
+                        .imgUrl("assets/img/service/final/9.png").build(),
                 StoreCategory.builder().name("Sushi")
-                        .imgUrl("assets/img/service/12.png").build()
+                        .imgUrl("assets/img/service/final/2.png").build()
         );
 
         storeCategoryService.createAll(storeCategories);
@@ -117,7 +117,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                 .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/resized/shops/logo/@2x1658145208_295258@3x.png ")
                 .build();
         Store burgerStore2 = Store.builder()
-                .name(" Hot hot burger Νέα Φιλαδέλφεια")
+                .name(" Hot hot burger")
                 .storeCategory(storeCategories.get(2))
                 .address(" Βρυούλων 3")
                 .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x263023@3x.png")
@@ -249,7 +249,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
         // Souvlaki stores
         Store st1 = Store.builder().name("ΑΥΘΕΝΤΙΚΟΝ")
                 .storeCategory(storeCategories.get(1))
-                .address("2 9,")
+                .address("Λεωφ. Δεκελείας 29,")
                 .imgUrl("https://s3.eu-central-1.amazonaws.com/w4ve/box/shops/logo/@2x257741@3x.png")
                 .build();
         Store st2 = Store.builder().name("Οι Σουβλάκες")
@@ -828,82 +828,85 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Συνοδεύεται από ψωμάκι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png")
+                        .build(),
                 Product.builder().name("Kαλαμάκι Κοτόπουλο")
                         .description("Συνοδεύεται από ψωμάκι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.20))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png")
+                        .build(),
                 Product.builder().name("Τυλιχτό Γύρο Χοιρινό")
                         .description("Πίτα γύρος χοιρινός με τα υλικά της επιλογής σας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png")
+                        .build(),
                 Product.builder().name("Τυλιχτό Γύρο Κοτόπουλο")
                         .description("Τυλιχτό Γύρο Κοτόπουλο με υλικά της επιλογής σας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.20))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Κεμπάπ")
                         .description("Συνοδεύεται από ψωμάκι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Κεμπάπ σε πίτα")
                         .description("Πίτα κεμπάπ με τα υλικά της επιλογής σας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Μπιφτέκι μοσχαρίσιο σε πίτα")
                         .description("Πίτα μπιφτέκι μοσχαρίσιο με τα υλικά της επιλογής σας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Λουκάνικο χοιρινό σε πίτα")
                         .description("Πίτα λουκάνικο χοιρινό με τα υλικά της επιλογής σας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.40))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Καλαμάκι μοσχαρίσιο σε πίτα")
                         .description("Με Καλαμάκι μοσχαρίσιο, ντομάτα, μαρούλι ,πατάτες & BBQ sauce")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Μπιφτέκι κοτόπουλο")
                         .description("Συνοδεύεται από ψωμάκι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Λουκάνικο χοιρινό Τρικάλων")
                         .description("Συνοδεύεται από ψωμάκι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Καλαμάκι μανιτάρι")
                         .description("Συνοδεύεται από ψωμάκι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Μπιφτέκι λαχανικών")
                         .description("Συνοδεύεται από ψωμάκι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Φαλάφελ σε πίτα")
                         .description("Πίτα φαλάφελ με τα υλικά της επιλογής σα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Χαλούμι & μανιτάρι σε πίτα")
                         .description("Χαλούμι & μανιτάρι σε πίτα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build(),
+                        .imgUrl("assets/img/service/final/7.png").build(),
                 Product.builder().name("Οικολογικό σε πίτα")
                         .description("Οικολογικό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/8.png").build()
+                        .imgUrl("assets/img/service/final/7.png").build()
         );
     }
 
@@ -914,119 +917,119 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.10))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Cappuccino")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.50))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Freddo Espresso")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(2.10))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Freddo Cappuccino")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(2.20))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Espresso macchiato")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Espresso americano")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Freddo espresso macchiato")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Cappuccino latte")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.70))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Freddo cappuccino latte")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Freddo cappuccino με φυτική κρέμα")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(2.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Nes")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Φίλτρου")
                         .description("Lucaffe Exquisit 100% arabica premium")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Σοκολάτα ruby")
                         .description("Σοκολάτα ruby")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Σοκολάτα με γεύση μπανάνα")
                         .description("Σοκολάτα με γεύση μπανάνα")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Λευκή σοκολάτα")
                         .description("Λευκή σοκολάτα")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Μαύρη σοκολάτα")
                         .description("Μαύρη σοκολάτα")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build(),
                 Product.builder()
                         .name("Lucaccino")
                         .description("14oz. Κρύο ρόφημα με σοκολάτα & espresso")
                         .productCategory(getProductCategory("d"))
                         .price(BigDecimal.valueOf(1.90))
-                        .imgUrl("assets/img/service/9.png")
+                        .imgUrl("assets/img/service/final/3.png")
                         .build()
 
 
@@ -1041,14 +1044,14 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 "καραμελωμένα κρεμμύδια, ντομάτα, BBQ sauce & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Cheese Burger")
                         .description("Σε ψωμί american bun με φρέσκο μπιφτέκι, cheddar, ketchup & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Honey mustard bacon burge")
@@ -1056,7 +1059,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " καραμελωμένα κρεμμύδια, ντομάτα, μαγιονέζα & sauce honey mustard")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Vegan Burger")
@@ -1064,7 +1067,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " ντομάτα, καραμελωμένα κρεμμύδια, σάλτσα βασιλικού & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("American chicken burger")
@@ -1072,14 +1075,14 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " ντομάτα & διπλή στρώση Philadelphia")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("American Burger")
                         .description("Σε ψωμί american bun με φρέσκο μπιφτέκι, ketchup & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Sweet-Philly Burger")
@@ -1087,7 +1090,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " Philadelphia, iceberg, ντομάτα & sweet chilli mayo")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("The XXL Big burger")
@@ -1095,7 +1098,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " κρεμμύδι, μουστάρδα, ψητή ντομάτα, μαγιονέζα & παρμεζάνα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Black Angus Burger")
@@ -1103,14 +1106,14 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 "cheddar, 3 φέτες crispy μπέικον, σάλτσα με κρέμα cheddar & φρέσκα μανιτάρια")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Mushroom Burger")
                         .description("Σε ψωμί american bun με μπιφτέκι από φρέσκα μανιτάρια και cheddar")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Double-smashed")
@@ -1118,7 +1121,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " αγγουράκι τουρσί, ντομάτα, κρεμμύδι & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Turkey Burger")
@@ -1126,7 +1129,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " ντομάτα, καραμελωμένα κρεμμύδια, BBQ sauce & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Caesar's")
@@ -1134,7 +1137,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 "bacon, iceberg, ντομάτα, μαγιονέζα & caesar's sauce")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Mexican Burger")
@@ -1142,7 +1145,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 "cheddar, κρεμμύδι, μπέικον & μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Jack Daniel's Burger")
@@ -1150,7 +1153,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 " ντομάτα, μανιτάρια σωτέ & sauce Jack Daniel's με ανανά")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build(),
                 Product.builder()
                         .name("Buffalo Burger")
@@ -1158,7 +1161,7 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                                 "μαύρη μουστάρδα, ντομάτα, cheddar & καραμελωμένα κρεμμύδια")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.40))
-                        .imgUrl("assets/img/service/3.png")
+                        .imgUrl("assets/img/service/final/10.png")
                         .build()
         );
     }
@@ -1171,84 +1174,84 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Με σάλτσα & τυρί gouda ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα ζαμπόν ")
                         .description("Με ζαμπόν & τυρί gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.00))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα special ")
                         .description("Με μπέικον, ζαμπόν, πιπεριά, μανιτάρια σάλτσα,τυρί & φρέσκια ντομάτα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα Classic")
                         .description("Πίτσα ζαμπόν, μπέικον & τυρί gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα χωριάτικη ")
                         .description("Με φέτα, ντομάτα, πιπεριά, μανιτάρια, ελιές, κρεμμύδι & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.00))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα κοτόπουλο ")
                         .description("Με στήθος κοτόπουλο, σως, ντομάτα, φέτα, πιπεριά & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα πεπερόνι")
                         .description(" Με σάλτσα, ντομάτα, πιπεριά, πεπερόνι, μανιτάρια & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα καρμπονάρα ")
                         .description("Με ζαμπόν, μπέικον, κρέμα γάλακτος, παρμεζάνα, μανιτάρια & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name(" Πίτσα λουκάνικο τυρί")
                         .description(" Με σάλτσα, λουκάνικο χωριάτικο & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(11.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα φέτα ντομάτα")
                         .description("Με φέτα, ντομάτα & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα σουτζούκι")
                         .description(" Με σάλτσα, σουτζούκι, ντομάτα & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(12.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build(),
                 Product.builder()
                         .name("Πίτσα παστουρμάς")
                         .description("Με σάλτσα, παστουρμά, ντομάτα & gouda")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.40))
-                        .imgUrl("assets/img/service/1.png")
+                        .imgUrl("assets/img/service/final/1.png")
                         .build()
 
         );
@@ -1261,73 +1264,73 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Με πουγκάκια γεμιστά με κιμά & λαχανικά ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.90))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Chicken wings")
                         .description("6 Τεμάχια. Φτερούγες κοτόπουλο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
-                Product.builder().name("Noodles με γαρίδες & σάλτσα satay")
+                Product.builder().name("Noodles satay")
                         .description("Ταλιατέλες ρυζιού με αυγό, γαρίδες, λάχανο, πράσινη πιπεριά, κοκκινη πιπεριά, κρεμμύδι & σάλτσα satay ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.80))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Cheese won ton")
                         .description("6 Τεμάχια. Τραγανά φιονγκάκια με τυρί Philadelphia & καβούρι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Shrimp dimblings")
                         .description("5 Τεμάχια. Γαριδοπιτάκια τηγανητά ή ατμού ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Meet dumplings")
                         .description("4 Τεμάχια. Κρεατοπιτάκια τηγανητά ή ατμού")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Won ton soup")
                         .description("Σούπα με won ton από φύλλα ζυμαρικών με κιμά, καρότο, μανιτάρια, φρέσκο κρεμμύδι & λάχανο")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Pecking duck")
                         .description("Πάπια Πεκίνου τηγανισμένη με πίτα, καρότο, μανιτάρια, φρέσκο κρεμμύδι, λάχανο & dark sauce")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(11.40))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Szechuan beef")
                         .description("Βοδινό με καρότο, μανιτάρια, φρέσκο κρεμμύδι & λάχανο σε καυτερή σάλτσα Szechuan ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.90))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Beef with mushrooms & bamboo")
                         .description("Μοσχάρι με μανιτάρια & μπαμπού")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Singapore noodles")
                         .description("Κινέζικα noodles από ρύζι με καρότο, μανιτάρια, κρεμμύδι, λάχανο, γαρίδες & σάλτσα κάρυ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.90))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build(),
                 Product.builder().name("Καντονέζικο καυτερό ρύζι")
                         .description("Καυτερό. Με μύδια, καλαμάρι, γαρίδα, καβούρι & chili")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.30))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/4.png")
                         .build()
         );
     }
@@ -1338,73 +1341,73 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Με σάλτσα ντομάτας & τριμμένη παρμεζάνα ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.30))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Spaghetti chef")
                         .description("Με μπέικον, μανιτάρια, κρέμα γάλακτος & τριμμένη παρμεζάνα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Spaghetti aglio e olio")
                         .description("Με ελαιόλαδο, σκόρδο & chili flakes")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Spaghetti bolognese")
                         .description("Με κιμά & τριμμένη παρμεζάν")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Πέννες")
                         .description("Mε φρέσκια mozzarella, ντομάτα & βασιλικό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.30))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Πέννες με κοτόπουλο")
                         .description("Με κοτόπουλο, φρέσκο κρεμμύδι, μουστάρδα & κρέμα γάλακτος")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(11.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Καρμπονάρα")
                         .description("Με χοιρινή πανσέτα, φρέσκα μανιτάρια & κρέμα γάλακτος")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Ριζότο θαλασσινών")
                         .description("Με γαρίδες, μύδια, καλαμάρι, φρέσκο κρεμμυδάκι & φρέσκια ντομάτα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(25.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Ριζότο κοτόπουλο")
                         .description("Με κοτόπουλο φιλέτο, κρόκο Κοζάνης & κρέμα παρμεζάνας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(12.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Ριζότο μανιτάρια")
                         .description("Με μανιτάρια porcini & λάδι λευκής τρούφας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.50))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Κριθαρότο γαρίδες")
                         .description("Με ούζο, φέτα, φρέσκια ντομάτα & βασιλικό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(23.00))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build(),
                 Product.builder().name("Κριθαρότο μοσχαράκι")
                         .description("Με τρίχρωμη πιπεριά & φρέσκια ντομάτα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(14.90))
-                        .imgUrl("assets/img/service/2.png")
+                        .imgUrl("assets/img/service/final/5.png")
                         .build());
     }
 
@@ -1414,73 +1417,73 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Με μανιτάρι portobello, μανιτάρι πλευρώτους, λευκά μανιτάρια, μέλι, θυμάρι, garlic mayo & τυρί προβολόνε")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.90))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Veggie omelet")
                         .description("Με 3 αυγά, μανιτάρια, ντοματίνια & πράσινες πιπεριές. Συνοδεύεται από φρεσκοκομμένες τηγανητές πατάτες")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.50))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Μεξικάνα")
                         .description("Σαλάτα με λάχανο, μαρούλι, καρότο, καλαμπόκι, κόκκινα φασόλια, cocktail σως & τυρί")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.30))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Sandwich vegetarian")
                         .description("Με μπιφτέκι λαχανικών, μαρούλι, ντομάτα, πατάτες τηγανητές & sauce μουστάρδα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.50))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Vegetarian burger")
                         .description("Ψωμάκι της επιλογής σας με μπιφτέκι λαχανικών, μανιτάρια πλευρώτους, ντομάτα, iceberg, vegan mayo & vegan sauce μουστάρδας")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.00))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Aloo - Gobbi")
                         .description("Κουνουπίδι και πατάτες,καρότα μαγειρεμένα απο μείγμα ινδικών μπαχαρικών")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.50))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Jeera Aloo")
                         .description("Πατάτες με κύμινο κρεμμύδια ντομάτες και ινδικά μπαχαρικά")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.00))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Dal Tarka")
                         .description("Κρεμώδεις κίτρινες φακές με αρωματικά μπαχαρικά")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.00))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Mix Vegetable")
                         .description("Φασολάκια, πατάτες και καρότα μαγειρεμένα με ινδική σάλτσα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.90))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Μπιφτέκι λαχανικών Da Vinci")
                         .description("2 Τεμάχια. Συνοδεύεται από μουστάρδα & σαλάτα vegetarian (μαρούλι, αγγούρι, ντομάτα & πιπεριά)")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.10))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Vegetarian ")
                         .description("Με σάλτσα ντομάτας, μοτσαρέλα, ελιές, πιπεριά, κρεμμύδι & βασιλικό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.50))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build(),
                 Product.builder().name("Καλτσόνε vegetarian")
                         .description("30cm. Χειροποίητη ζύμη. Με σάλτσα ντομάτας, mozzarella, ντοματίνια, πιπεριά & μανιτάρια")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.00))
-                        .imgUrl("assets/img/service/5.png")
+                        .imgUrl("assets/img/service/final/11.png")
                         .build());
     }
 
@@ -1490,125 +1493,125 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("6 Τεμάχια. Καυτερό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.90))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Enchiladas barbacoa beef")
                         .description("Γεμιστες τορτιγιες καλαμποκιου με σιγομαγειρεμενο μοσχαρι, μεξικανικα μπαχαρικα,chipotle sauce και τυρι cheddar ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(12.50))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Chimichanga chicken")
                         .description("Τορτίγια από αλεύρι τηγανητή με γέμιση mix τυριών, φιλέτο κοτόπουλο, πιπεριά πράσινη, πιπεριά κόκκινη, πιπεριά κίτρινη & μανιτάρια. Συνοδεύεται από μεξικάνικο ρύζι, sauce ranchera, pico de gallo & κόλιανδρο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(12.50))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Burritos chili con carne")
                         .description("Καυτερό. Ψητή τορτίγια με cheddar & chili con carne. Συνοδεύεται από μεξικάνικο ρύζι, ανάμεικτη σαλάτα & sour cream ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.00))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Tacos beef")
                         .description("Με pico de gallo, iceberg, μοσχαρίσιο κιμά & cheddar τριμμένο. Συνοδεύεται από με μεξικάνικο ρύζι, ανάμεικτη σαλάτα & sauce ranchera ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.20))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Jamon Iberico")
                         .description("Pata negra 28μήνης ωρίμανσης ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(13.30))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Variedad de jamones y quesos")
                         .description("Ποικιλία αλλαντικών & τυριών με prosciutto di Parma, chorizo de Espana, spianata calabria, parmigiano reggiano, manchego de Espana & αρσενικό Νάξου")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(11.50))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Paellas de mariscos")
                         .description("Με μύδια, γαρίδες, καλαμάρι & κρόκο Κοζάνης ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(18.50))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Paellas valenciana mixta")
                         .description("Με κοτόπουλο, chorizo λουκάνικο, μύδια, γαρίδες, καλαμάρι & κρόκο Κοζάνης ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(17.00))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Nachos chili con carne")
                         .description("10 Τεμάχια. Καυτερό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.00))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Guacamole & chips")
                         .description("Μεξικάνικο dip με βάση το avocado, pico de gallo & lime ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.20))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build(),
                 Product.builder().name("Fajitas vegetables")
                         .description("Mix λαχανικών. Με λεπτοκομμένη πράσινη πιπεριά, κόκκινη πιπεριά, κίτρινη πιπεριά, κρεμμύδι & σάλτσα ranchera. Συνοδεύεται από τορτίγιες αλευριού, guacamole, pico de gallo & sour cream ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(13.80))
-                        .imgUrl("assets/img/service/6.png")
+                        .imgUrl("assets/img/service/final/6.png")
                         .build());
     }
 
     List<Product> getListOfProductsForHomemadeStores() {
         return List.of(
-                Product.builder().name("Μπιφτέκια με πουρέ πατάτας")
+                Product.builder().name("Μπιφτέκια με πουρέ πατάτας & μυρωδικά")
                         .description("2 τεμάχια. Με ανάμεικτο κιμά ψημένα στη σχάρα ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.90))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Sweet chili φιλέτο κοτόπουλο με άγριο ρύζι")
                         .description("Τρυφερό & ελαφρύ φιλετάκι κοτόπουλο ψημένο στη σχάρα με γλυκοκαυτερή σως. Συνοδεύεται από άγριο ρύζι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Αρακάς λεμονάτος με κοτόπουλο")
                         .description("Μια πεντανόστιμη & υγιεινή συνταγή του αρακά με κοτόπουλο, καροτάκια & πατάτες. Φρεσκοστημμένα λεμόνια, άνηθος & μαϊντανός συνθέτουν ένα τέλειο γευστικά πιάτο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.50))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Κοτόπουλο με πουρέ πατάτας")
                         .description("Λαχταριστό μπουτάκι κοτόπουλο με χειροποίητο πουρέ πατάτες & άρωμα δενδρολίβανο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.50))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Παστίτσιο ")
                         .description("Με κανελόνια γεμιστά με μοσχαρίσιο κιμά και μπεσαμέλ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(15.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Κόκορας κρασάτος")
                         .description("Με χοντρό μακαρόνι")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Μακαρόνια με σάλτσα")
                         .description("Συνοδεύεται από τριμμένο τυρί")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Φασολάκια")
                         .description("6 Τεμάχια. Καυτερό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.90))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Jalapenos peppers")
                         .description("Συνοδεύεται με φέτα")
@@ -1620,19 +1623,19 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Συνοδεύεται με φέτα")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(9.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Κεφτεδάκια τηγανητά")
                         .description("12 Τεμάχια. Με δροσερό καρέ ντομάτας & γιαούρτι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.00))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build(),
                 Product.builder().name("Λουκάνικο Καρδίτσας στα κάρβουνα")
                         .description("Συνοδεύεται από πατάτες τηγανητές ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.50))
-                        .imgUrl("assets/img/service/7.png")
+                        .imgUrl("assets/img/service/final/12.png")
                         .build());
     }
 
@@ -1642,73 +1645,73 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("Αμερικάνικο")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Mystic panna cotta")
                         .description("Με κανναβόσπορο & σιρόπι καραμέλα ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(2.50))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Mystic gorilla")
                         .description("2 Ατόμων. Πεϊνιρλί με κρέμα γάλακτος, μπανάνα & σοκολάτα με κανναβόσπορο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Cheesecake βύσσινο")
                         .description("Με πλούσια φρέσκια κρέμα & χειροποίητη μαρμελάδα βύσσινο")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Brownies Valrhona")
                         .description("Double chocolate")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.70))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Σοκολατόπιτα")
                         .description("Σπιτική. Με σάλτσα σοκολάτας ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.90))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Προφιτερόλ")
                         .description("Πολίτικο")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.50))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Millefeuille")
                         .description("Σπιτικό")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Mousse κρέμα με σου & φράουλες")
                         .description("Φρέσκες φράουλες")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Πάστα ρώσικος τρούλος")
                         .description("Mousse κόκκινων φρούτων του δάσους, cremeux σοκολάτασς & επικάλυψη φράουλα ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(8.30))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Γαλακτομπουρεκο σε κανταΐφι")
                         .description("Φρέσκα υλικά")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(17.50))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build(),
                 Product.builder().name("Τούρτα παγωτό παρφέ σοκολάτα το κιλό")
                         .description("Περίπου 1.5kg. Η τελική τιμή του προϊόντος θα διαμορφωθεί κατά το ζύγισμα ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(25.00))
-                        .imgUrl("assets/img/service/10.png")
+                        .imgUrl("assets/img/service/final/8.png")
                         .build());
     }
 
@@ -1718,73 +1721,73 @@ public class SampleDataGenerator extends BaseComponent implements CommandLineRun
                         .description("8 Τεμάχια. Ρολό με αβοκάντο, καρότο & αγγούρι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.50))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Salmon maki roll")
                         .description("8 Τεμάχια. Ρολό με σολομό ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Kappa maki roll")
                         .description("8 Τεμάχια. Ρολό με αγγούρι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(3.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Tuna maki roll")
                         .description("8 Τεμάχια. Ρολό με τόνο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Spicy salmon maki roll")
                         .description("8 Τεμάχια. Ρολό με σολομό & καυτερή sauce ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("California roll")
                         .description("8 Τεμάχια. Ρολό με surimi καβουριού, αγγούρι & αβοκάντο ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(6.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Creamy salmon roll")
                         .description("8 Τεμάχια. Ρολό με σολομό, avocado & κρέμα τυριού ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Uramaki Combo")
                         .description("Combo με επιλεγμένα inside-out rolls. 16 τεμάχια. ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(12.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Maki lovers")
                         .description("Combo με επιλεγμένα maki rolls. 12 τεμάχια. ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(10.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Edamame beans")
                         .description("Αλατισμένα φασολάκια σόγιας ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(5.50))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Rice balls")
                         .description("2 Μπάλες ρυζιού με φρέσκα κρεμμυδάκια, καρότο & ginger ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(4.50))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build(),
                 Product.builder().name("Avocado maki rolls")
                         .description("6 Τεμάχια. Ρολά με αβοκάντο τυλιγμένα σε φύκι ")
                         .productCategory(getProductCategory("f"))
                         .price(BigDecimal.valueOf(7.00))
-                        .imgUrl("assets/img/service/12.png")
+                        .imgUrl("assets/img/service/final/2.png")
                         .build());
     }
 
