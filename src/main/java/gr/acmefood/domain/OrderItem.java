@@ -1,6 +1,7 @@
 package gr.acmefood.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,12 +17,14 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "ORDER_ITEMS")
 public class OrderItem extends BaseModel {
+
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Product product;
+    @JsonProperty("id")
+    private Long productId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @ToString.Exclude
     private Order order;
 
     @NotNull
