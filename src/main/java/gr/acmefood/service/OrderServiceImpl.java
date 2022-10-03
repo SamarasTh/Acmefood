@@ -54,17 +54,17 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         return finalCost;
     }
 
-    private boolean checkNullability(Order order, Product product) {
-        if (order == null) {
-            logger.warn("Order is null.");
-            return true;
-        }
-        if (product == null) {
-            logger.warn("Product is null.");
-            return true;
-        }
-        return false;
-    }
+//    private boolean checkNullability(Order order, Product product) {
+//        if (order == null) {
+//            logger.warn("Order is null.");
+//            return true;
+//        }
+//        if (product == null) {
+//            logger.warn("Product is null.");
+//            return true;
+//        }
+//        return false;
+//    }
 
 
 }

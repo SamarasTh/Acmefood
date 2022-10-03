@@ -10,4 +10,6 @@ public interface StoreService extends BaseService<Store> {
     List<Store> findByNameLike(String name);
 
     Store findById(Long id);
+
+    List<Store> getMostFamousStoreS();
 }

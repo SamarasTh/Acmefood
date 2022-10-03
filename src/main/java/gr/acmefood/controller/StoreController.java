@@ -65,4 +65,14 @@ public class StoreController extends AbstractController<Store> {
         return ResponseEntity.ok(ApiResponse.<Store>builder().data(store).build());
     }
 
+    @GetMapping(value = "/famous-stores")
+    public ResponseEntity<ApiResponse<List<Store>>> findMostFamousStores() {
+        final List<Store> famousStores = storeService.getMostFamousStoreS();
+        if (famousStores == null || famousStores.isEmpty()) {
+            throw new NoSuchElementException("Most famous stores do not exist");
+        }
+        return ResponseEntity.ok(ApiResponse.<List<Store>>builder().data(famousStores).build());
+    }
+
+
 }

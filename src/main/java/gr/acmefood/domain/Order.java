@@ -1,10 +1,12 @@
 package gr.acmefood.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +25,15 @@ public class Order extends BaseModel {
     @JoinColumn(foreignKey = @ForeignKey(name = "FK__ORDERS__ACCOUNT__ID"))
     @NotNull
     private Account account;
+
+    @NotNull
+    @Column
+    private Long selectedAddressId;
+
+
+    @NotNull
+    @Column
+    private Long storeId;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)

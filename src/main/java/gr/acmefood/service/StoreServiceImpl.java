@@ -44,4 +44,10 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
             throw new NoSuchElementException("Store with id: " + id + " does not exists!");
         }
     }
+
+    @Override
+    public List<Store> getMostFamousStoreS() {
+
+        return storeRepository.findMostFamousStores();
+    }
 }
